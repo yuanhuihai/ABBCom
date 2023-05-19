@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABBCom", "ABBCom\ABBCom.csproj", "{EFE220AA-9D01-4438-853A-48CDE59BEE65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFE220AA-9D01-4438-853A-48CDE59BEE65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFE220AA-9D01-4438-853A-48CDE59BEE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFE220AA-9D01-4438-853A-48CDE59BEE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFE220AA-9D01-4438-853A-48CDE59BEE65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C78337A8-2C3E-4EE2-8E83-0C46402F9C08}
+	EndGlobalSection
+EndGlobal
