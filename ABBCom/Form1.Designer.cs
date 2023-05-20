@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listView1 = new System.Windows.Forms.ListView();
             this.SystemName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IPAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,17 +52,32 @@
             this.RZ1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.getPos = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.getStatus = new System.Windows.Forms.Button();
-            this.statusOne = new System.Windows.Forms.TextBox();
             this.statusTwo = new System.Windows.Forms.TextBox();
+            this.statusOne = new System.Windows.Forms.TextBox();
+            this.getStatus = new System.Windows.Forms.Button();
+            this.motorOn = new System.Windows.Forms.Button();
+            this.motorOff = new System.Windows.Forms.Button();
+            this.comboBoxtask = new System.Windows.Forms.ComboBox();
+            this.getTask = new System.Windows.Forms.Button();
+            this.getModule = new System.Windows.Forms.Button();
+            this.comboBoxmodule = new System.Windows.Forms.ComboBox();
+            this.getProgram = new System.Windows.Forms.Button();
+            this.comboBoxprogram = new System.Windows.Forms.ComboBox();
+            this.confirmChoice = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkCordinate = new System.Windows.Forms.Button();
+            this.comboBoxcordinate = new System.Windows.Forms.ComboBox();
+            this.getCordinate = new System.Windows.Forms.Button();
+            this.listView3 = new System.Windows.Forms.ListView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -72,6 +88,8 @@
             this.Version,
             this.IsVirtual,
             this.ControllerName});
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(18, 20);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(862, 97);
@@ -117,7 +135,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label2
@@ -249,16 +267,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "坐标位置";
             // 
-            // radioButton1
+            // getPos
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(76, 32);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 16);
-            this.radioButton1.TabIndex = 23;
-            this.radioButton1.Text = "关节坐标";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.getPos.Location = new System.Drawing.Point(6, 29);
+            this.getPos.Name = "getPos";
+            this.getPos.Size = new System.Drawing.Size(56, 23);
+            this.getPos.TabIndex = 25;
+            this.getPos.Text = "获取";
+            this.getPos.UseVisualStyleBackColor = true;
+            this.getPos.Click += new System.EventHandler(this.getPos_Click);
             // 
             // radioButton2
             // 
@@ -270,15 +287,17 @@
             this.radioButton2.Text = "笛卡尔坐标";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // getPos
+            // radioButton1
             // 
-            this.getPos.Location = new System.Drawing.Point(6, 29);
-            this.getPos.Name = "getPos";
-            this.getPos.Size = new System.Drawing.Size(56, 23);
-            this.getPos.TabIndex = 25;
-            this.getPos.Text = "获取";
-            this.getPos.UseVisualStyleBackColor = true;
-            this.getPos.Click += new System.EventHandler(this.getPos_Click);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(76, 32);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(71, 16);
+            this.radioButton1.TabIndex = 23;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "关节坐标";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -303,6 +322,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "机器人状态";
             // 
+            // statusTwo
+            // 
+            this.statusTwo.Location = new System.Drawing.Point(179, 31);
+            this.statusTwo.Name = "statusTwo";
+            this.statusTwo.Size = new System.Drawing.Size(83, 21);
+            this.statusTwo.TabIndex = 27;
+            // 
+            // statusOne
+            // 
+            this.statusOne.Location = new System.Drawing.Point(96, 31);
+            this.statusOne.Name = "statusOne";
+            this.statusOne.Size = new System.Drawing.Size(77, 21);
+            this.statusOne.TabIndex = 26;
+            // 
             // getStatus
             // 
             this.getStatus.Location = new System.Drawing.Point(6, 31);
@@ -313,36 +346,168 @@
             this.getStatus.UseVisualStyleBackColor = true;
             this.getStatus.Click += new System.EventHandler(this.getStatus_Click);
             // 
-            // statusOne
+            // motorOn
             // 
-            this.statusOne.Location = new System.Drawing.Point(96, 31);
-            this.statusOne.Name = "statusOne";
-            this.statusOne.Size = new System.Drawing.Size(77, 21);
-            this.statusOne.TabIndex = 26;
+            this.motorOn.Location = new System.Drawing.Point(25, 450);
+            this.motorOn.Name = "motorOn";
+            this.motorOn.Size = new System.Drawing.Size(75, 23);
+            this.motorOn.TabIndex = 25;
+            this.motorOn.Text = "电机开启";
+            this.motorOn.UseVisualStyleBackColor = true;
+            this.motorOn.Click += new System.EventHandler(this.motorOn_Click);
             // 
-            // statusTwo
+            // motorOff
             // 
-            this.statusTwo.Location = new System.Drawing.Point(179, 31);
-            this.statusTwo.Name = "statusTwo";
-            this.statusTwo.Size = new System.Drawing.Size(83, 21);
-            this.statusTwo.TabIndex = 27;
+            this.motorOff.Location = new System.Drawing.Point(106, 450);
+            this.motorOff.Name = "motorOff";
+            this.motorOff.Size = new System.Drawing.Size(75, 23);
+            this.motorOff.TabIndex = 26;
+            this.motorOff.Text = "电机关闭";
+            this.motorOff.UseVisualStyleBackColor = true;
+            this.motorOff.Click += new System.EventHandler(this.motorOff_Click);
+            // 
+            // comboBoxtask
+            // 
+            this.comboBoxtask.FormattingEnabled = true;
+            this.comboBoxtask.Location = new System.Drawing.Point(6, 33);
+            this.comboBoxtask.Name = "comboBoxtask";
+            this.comboBoxtask.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxtask.TabIndex = 27;
+            // 
+            // getTask
+            // 
+            this.getTask.Location = new System.Drawing.Point(133, 33);
+            this.getTask.Name = "getTask";
+            this.getTask.Size = new System.Drawing.Size(75, 23);
+            this.getTask.TabIndex = 28;
+            this.getTask.Text = "获取任务";
+            this.getTask.UseVisualStyleBackColor = true;
+            this.getTask.Click += new System.EventHandler(this.getTask_Click);
+            // 
+            // getModule
+            // 
+            this.getModule.Location = new System.Drawing.Point(133, 66);
+            this.getModule.Name = "getModule";
+            this.getModule.Size = new System.Drawing.Size(75, 23);
+            this.getModule.TabIndex = 30;
+            this.getModule.Text = "获取模块";
+            this.getModule.UseVisualStyleBackColor = true;
+            this.getModule.Click += new System.EventHandler(this.getModule_Click);
+            // 
+            // comboBoxmodule
+            // 
+            this.comboBoxmodule.FormattingEnabled = true;
+            this.comboBoxmodule.Location = new System.Drawing.Point(6, 66);
+            this.comboBoxmodule.Name = "comboBoxmodule";
+            this.comboBoxmodule.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxmodule.TabIndex = 29;
+            // 
+            // getProgram
+            // 
+            this.getProgram.Location = new System.Drawing.Point(133, 97);
+            this.getProgram.Name = "getProgram";
+            this.getProgram.Size = new System.Drawing.Size(75, 23);
+            this.getProgram.TabIndex = 32;
+            this.getProgram.Text = "获取程序";
+            this.getProgram.UseVisualStyleBackColor = true;
+            this.getProgram.Click += new System.EventHandler(this.getProgram_Click);
+            // 
+            // comboBoxprogram
+            // 
+            this.comboBoxprogram.FormattingEnabled = true;
+            this.comboBoxprogram.Location = new System.Drawing.Point(6, 97);
+            this.comboBoxprogram.Name = "comboBoxprogram";
+            this.comboBoxprogram.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxprogram.TabIndex = 31;
+            // 
+            // confirmChoice
+            // 
+            this.confirmChoice.Location = new System.Drawing.Point(6, 123);
+            this.confirmChoice.Name = "confirmChoice";
+            this.confirmChoice.Size = new System.Drawing.Size(202, 32);
+            this.confirmChoice.TabIndex = 33;
+            this.confirmChoice.Text = "确认选择";
+            this.confirmChoice.UseVisualStyleBackColor = true;
+            this.confirmChoice.Click += new System.EventHandler(this.confirmChoice_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.confirmChoice);
+            this.groupBox4.Controls.Add(this.comboBoxtask);
+            this.groupBox4.Controls.Add(this.getProgram);
+            this.groupBox4.Controls.Add(this.getTask);
+            this.groupBox4.Controls.Add(this.comboBoxprogram);
+            this.groupBox4.Controls.Add(this.comboBoxmodule);
+            this.groupBox4.Controls.Add(this.getModule);
+            this.groupBox4.Location = new System.Drawing.Point(339, 186);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(217, 163);
+            this.groupBox4.TabIndex = 34;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "程序选择";
+            // 
+            // checkCordinate
+            // 
+            this.checkCordinate.Location = new System.Drawing.Point(599, 196);
+            this.checkCordinate.Name = "checkCordinate";
+            this.checkCordinate.Size = new System.Drawing.Size(75, 23);
+            this.checkCordinate.TabIndex = 35;
+            this.checkCordinate.Text = "查看坐标";
+            this.checkCordinate.UseVisualStyleBackColor = true;
+            this.checkCordinate.Click += new System.EventHandler(this.checkCordinate_Click);
+            // 
+            // comboBoxcordinate
+            // 
+            this.comboBoxcordinate.FormattingEnabled = true;
+            this.comboBoxcordinate.Location = new System.Drawing.Point(692, 196);
+            this.comboBoxcordinate.Name = "comboBoxcordinate";
+            this.comboBoxcordinate.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxcordinate.TabIndex = 34;
+            // 
+            // getCordinate
+            // 
+            this.getCordinate.Location = new System.Drawing.Point(830, 193);
+            this.getCordinate.Name = "getCordinate";
+            this.getCordinate.Size = new System.Drawing.Size(75, 23);
+            this.getCordinate.TabIndex = 34;
+            this.getCordinate.Text = "确认";
+            this.getCordinate.UseVisualStyleBackColor = true;
+            this.getCordinate.Click += new System.EventHandler(this.getCordinate_Click);
+            // 
+            // listView3
+            // 
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(599, 235);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(306, 67);
+            this.listView3.TabIndex = 36;
+            this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 532);
+            this.ClientSize = new System.Drawing.Size(972, 532);
+            this.Controls.Add(this.listView3);
+            this.Controls.Add(this.getCordinate);
+            this.Controls.Add(this.comboBoxcordinate);
+            this.Controls.Add(this.checkCordinate);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.motorOff);
+            this.Controls.Add(this.motorOn);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "C#和ABB机器人通讯";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,6 +545,20 @@
         private System.Windows.Forms.TextBox statusTwo;
         private System.Windows.Forms.TextBox statusOne;
         private System.Windows.Forms.Button getStatus;
+        private System.Windows.Forms.Button motorOn;
+        private System.Windows.Forms.Button motorOff;
+        private System.Windows.Forms.ComboBox comboBoxtask;
+        private System.Windows.Forms.Button getTask;
+        private System.Windows.Forms.Button getModule;
+        private System.Windows.Forms.ComboBox comboBoxmodule;
+        private System.Windows.Forms.Button getProgram;
+        private System.Windows.Forms.ComboBox comboBoxprogram;
+        private System.Windows.Forms.Button confirmChoice;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button checkCordinate;
+        private System.Windows.Forms.ComboBox comboBoxcordinate;
+        private System.Windows.Forms.Button getCordinate;
+        private System.Windows.Forms.ListView listView3;
     }
 }
 

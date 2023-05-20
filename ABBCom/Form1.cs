@@ -9,16 +9,28 @@ using System.Windows.Forms;
 using ABB.Robotics.Controllers;
 using ABB.Robotics.Controllers.Discovery;
 using ABB.Robotics.Controllers.MotionDomain;
+using ABB.Robotics.Controllers.RapidDomain;
 using RobotStudio.Services.RobApi.RobApi1;
 
 namespace ABBCom
 {
     public partial class Form1 : Form
     {
-        NetworkScanner Scanner = null;
+     
         NetworkScanner scanner = null;
 
         static Controller controller;
+
+        static bool isConnect;
+        static bool isconnecttask;
+        static bool isconnectmodule;
+
+        static  int taskint ;
+        static string taskstring;
+        static int moduleint;
+        static string modulestring ;
+        static int routineint ;
+        static string routinestring;
 
 
         public Form1()
@@ -72,11 +84,13 @@ namespace ABBCom
                                 controller.Logoff();
                                 controller.Dispose();
                                 controller = null;
+                                isConnect = false;
                             }
                             controller = ControllerFactory.CreateFrom(info);
                             controller.Logon(UserInfo.DefaultUser);
+                           isConnect = true;
                             MessageBox.Show("已经登录控制器" + info.SystemName);
-                        currentstatus();
+             
                  
                         }
                     }
@@ -178,15 +192,215 @@ namespace ABBCom
 
 
 
-        static public double[] GetPosition(CoordinateSystemType type)//返回坐标值
+        //电机开启 20230520
+
+        private void motorOn_Click(object sender, EventArgs e)
         {
-            double[] Pos = new double[7];
-            string PosStr = controller.MotionSystem.MechanicalUnits[0].GetPosition(type).ToString();
-            string[] Poses = PosStr.Split(new char[] { ' ', '{', '}', '[', ']', ',' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i < 7; i++) Pos[i] = Convert.ToDouble(Poses[i]);
-            return Pos;
+            
+            if (isConnect == true)//判断是否连接机器人
+            {
+                try
+                {
+                    if (controller.OperatingMode == ControllerOperatingMode.Auto)//判断控制箱操作模式是否为自动模式
+                    {
+                        controller.State = ControllerState.MotorsOn;//开启电机
+                 
+                        MessageBox.Show("电机开启成功!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("请切换自动模式！");
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show("发生意外!:" + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("请连接机器人");
+            }
+
         }
 
-       
+
+        //电机关闭 20230520
+        private void motorOff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (controller.OperatingMode == ControllerOperatingMode.Auto)
+                {
+                    controller.State = ControllerState.MotorsOff;
+                    MessageBox.Show("机器人电机关闭成功");
+                }
+                else
+                {
+                    MessageBox.Show("请切换自动模式！");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("发生意外" + ex.Message);
+            }
+        }
+
+        // 获取任务列表
+    
+        private void getTask_Click(object sender, EventArgs e)
+        {
+            Isconnectrobot();
+            comboBoxtask.Items.Clear();
+            
+            for (int i = 0; i < (int)controller.Rapid.GetTasks().Count(); i++)
+            {
+                comboBoxtask.Items.Add(controller.Rapid.GetTasks()[i].Name);
+            }
+            isconnecttask = true;
+        }
+        private void Isconnectrobot()//验证是否连接机器人，防止代码卡死
+        {
+            if (isConnect == true)
+            {
+            }
+            else
+            {
+                MessageBox.Show("未识别到机器人，请连机器人！");
+            }
+
+
+        }
+
+        private void getModule_Click(object sender, EventArgs e)
+        {
+            comboBoxmodule.Items.Clear();
+            if (isconnecttask == true)
+            {
+                int taskint = comboBoxtask.SelectedIndex;
+                Module[] modules = controller.Rapid.GetTasks()[taskint].GetModules();
+                for (int i = 0; i < (int)modules.Count(); i++)
+                {
+                    comboBoxmodule.Items.Add(modules[i].Name);
+                };
+            }
+            else
+            {
+                MessageBox.Show("请指定某个任务");
+            }
+            isconnectmodule = true;
+
+        }
+
+        private void getProgram_Click(object sender, EventArgs e)
+        {
+            comboBoxprogram.Items.Clear();
+            if (isconnectmodule == true)
+            {
+                int taskint = comboBoxtask.SelectedIndex;
+                int moduleint = comboBoxmodule.SelectedIndex;
+                Routine[] routines1 = controller.Rapid.GetTasks()[taskint].GetModules()[moduleint].GetRoutines();
+                for (int i = 0; i < (int)routines1.Count(); i++)
+                {
+                    comboBoxprogram.Items.Add(routines1[i].Name);
+                }
+            }
+            else
+            {
+                MessageBox.Show("请指定某个模块");
+            }
+        }
+
+        private void confirmChoice_Click(object sender, EventArgs e)
+        {
+           taskint = comboBoxtask.SelectedIndex;
+           taskstring = comboBoxtask.SelectedItem.ToString();
+           moduleint = comboBoxmodule.SelectedIndex;
+           modulestring = comboBoxmodule.SelectedItem.ToString();
+            routineint = comboBoxtask.SelectedIndex;
+            routinestring = comboBoxtask.SelectedItem.ToString();
+
+        }
+
+        private void checkCordinate_Click(object sender, EventArgs e)
+        {
+            RapidSymbolSearchProperties date = RapidSymbolSearchProperties.CreateDefault();
+            date.Types = SymbolTypes.Data;
+            date.SearchMethod = SymbolSearchMethod.Block;
+            date.Recursive = true;
+            date.InUse = false;
+            date.LocalSymbols = false;
+            RapidSymbol[] symbols = controller.Rapid.GetTasks()[taskint].SearchRapidSymbol(date, "robtarget", string.Empty);
+            this.comboBoxcordinate.Items.Clear();
+            foreach (RapidSymbol symbol in symbols)
+            {
+                try
+                {
+                    RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
+                    comboBoxcordinate.Items.Add(rD.Name);
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
+            if (comboBoxcordinate.Items == null)
+            {
+                comboBoxcordinate.Text = "没有坐标变量";
+                MessageBox.Show("没有坐标变量");
+            }
+      
+        }
+
+        private void getCordinate_Click(object sender, EventArgs e)
+        {
+            if (comboBoxtask.SelectedItem.ToString() != null || comboBoxcordinate.SelectedItem.ToString() != null)
+            {
+                RapidSymbolSearchProperties date = RapidSymbolSearchProperties.CreateDefault();
+                date.Types = SymbolTypes.Data;
+                date.SearchMethod = SymbolSearchMethod.Block;
+                date.Recursive = true;
+                date.InUse = false;
+                date.LocalSymbols = false;
+                RapidSymbol[] symbols = controller.Rapid.GetTasks()[taskint].SearchRapidSymbol(date, "robtarget", string.Empty);
+                this.listView3.Items.Clear();
+                foreach (RapidSymbol symbol in symbols)
+                {
+                    try
+                    {
+                        RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
+                        if (rD.Name == comboBoxcordinate.SelectedItem.ToString())
+                        {
+                            ListViewItem item2 = new ListViewItem(symbol.Name);
+                            if (rD.Value != null)
+                            {
+                                item2.SubItems.Add(rD.Value.ToString());
+                            }
+                            else
+                            {
+                                item2.SubItems.Add("0");
+                            }
+                            item2.Tag = symbol;
+
+                            this.listView3.Items.Add(item2);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("请选择任务！");
+            }
+
+
+        }
     }
 }
