@@ -35,14 +35,17 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ABB.Robotics.Controllers.PC">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\ABB Industrial IT\Robotics IT\SDK\PCSDK 6.07\ABB.Robotics.Controllers.PC.dll</HintPath>
+    <Reference Include="ABB.Robotics.Controllers.PC, Version=6.7.7850.130, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ABB.Robotics.Controllers.PC.dll</HintPath>
     </Reference>
-    <Reference Include="RobotStudio.Services.RobApi">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\ABB Industrial IT\Robotics IT\SDK\PCSDK 6.07\RobotStudio.Services.RobApi.dll</HintPath>
+    <Reference Include="RobotStudio.Services.RobApi, Version=6.7.7850.130, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\RobotStudio.Services.RobApi.dll</HintPath>
     </Reference>
-    <Reference Include="RobotStudio.Services.RobApi.Desktop">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\ABB Industrial IT\Robotics IT\SDK\PCSDK 6.07\RobotStudio.Services.RobApi.Desktop.dll</HintPath>
+    <Reference Include="RobotStudio.Services.RobApi.Desktop, Version=6.7.7850.130, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\RobotStudio.Services.RobApi.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -87,6 +90,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="update.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

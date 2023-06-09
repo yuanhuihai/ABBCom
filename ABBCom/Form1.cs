@@ -338,6 +338,7 @@ namespace ABBCom
                 {
                     RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
                     comboBoxcordinate.Items.Add(rD.Name);
+                    MessageBox.Show("没有坐标变量+2");
                 }
                 catch (Exception)
                 {
@@ -346,7 +347,7 @@ namespace ABBCom
             }
             if (comboBoxcordinate.Items == null)
             {
-                comboBoxcordinate.Text = "没有坐标变量";
+                comboBoxcordinate.Items.Add( "没有坐标变量");
                 MessageBox.Show("没有坐标变量");
             }
       

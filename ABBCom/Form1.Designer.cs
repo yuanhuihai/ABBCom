@@ -50,12 +50,10 @@
             this.RX1 = new System.Windows.Forms.TextBox();
             this.RY1 = new System.Windows.Forms.TextBox();
             this.RZ1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.getPos = new System.Windows.Forms.Button();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.statusTwo = new System.Windows.Forms.TextBox();
             this.statusOne = new System.Windows.Forms.TextBox();
@@ -74,10 +72,17 @@
             this.comboBoxcordinate = new System.Windows.Forms.ComboBox();
             this.getCordinate = new System.Windows.Forms.Button();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView1
@@ -90,7 +95,7 @@
             this.ControllerName});
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(18, 20);
+            this.listView1.Location = new System.Drawing.Point(13, 22);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(862, 97);
             this.listView1.TabIndex = 0;
@@ -125,7 +130,7 @@
             // 
             // scanRobot
             // 
-            this.scanRobot.Location = new System.Drawing.Point(18, 123);
+            this.scanRobot.Location = new System.Drawing.Point(13, 138);
             this.scanRobot.Name = "scanRobot";
             this.scanRobot.Size = new System.Drawing.Size(75, 23);
             this.scanRobot.TabIndex = 1;
@@ -234,15 +239,6 @@
             this.RZ1.Size = new System.Drawing.Size(35, 21);
             this.RZ1.TabIndex = 14;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(571, 141);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 12);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "机器人当前状态";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.getPos);
@@ -260,7 +256,7 @@
             this.groupBox1.Controls.Add(this.RY1);
             this.groupBox1.Controls.Add(this.PZ1);
             this.groupBox1.Controls.Add(this.RX1);
-            this.groupBox1.Location = new System.Drawing.Point(25, 186);
+            this.groupBox1.Location = new System.Drawing.Point(13, 189);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(290, 162);
             this.groupBox1.TabIndex = 22;
@@ -299,23 +295,12 @@
             this.radioButton1.Text = "关节坐标";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.listView1);
-            this.groupBox2.Controls.Add(this.scanRobot);
-            this.groupBox2.Location = new System.Drawing.Point(25, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(886, 153);
-            this.groupBox2.TabIndex = 23;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "扫描机器人（双击连接）";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.statusTwo);
             this.groupBox3.Controls.Add(this.statusOne);
             this.groupBox3.Controls.Add(this.getStatus);
-            this.groupBox3.Location = new System.Drawing.Point(25, 365);
+            this.groupBox3.Location = new System.Drawing.Point(360, 138);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(290, 68);
             this.groupBox3.TabIndex = 24;
@@ -348,7 +333,7 @@
             // 
             // motorOn
             // 
-            this.motorOn.Location = new System.Drawing.Point(25, 450);
+            this.motorOn.Location = new System.Drawing.Point(360, 230);
             this.motorOn.Name = "motorOn";
             this.motorOn.Size = new System.Drawing.Size(75, 23);
             this.motorOn.TabIndex = 25;
@@ -358,7 +343,7 @@
             // 
             // motorOff
             // 
-            this.motorOff.Location = new System.Drawing.Point(106, 450);
+            this.motorOff.Location = new System.Drawing.Point(441, 230);
             this.motorOff.Name = "motorOff";
             this.motorOff.Size = new System.Drawing.Size(75, 23);
             this.motorOff.TabIndex = 26;
@@ -439,7 +424,7 @@
             this.groupBox4.Controls.Add(this.comboBoxprogram);
             this.groupBox4.Controls.Add(this.comboBoxmodule);
             this.groupBox4.Controls.Add(this.getModule);
-            this.groupBox4.Location = new System.Drawing.Point(339, 186);
+            this.groupBox4.Location = new System.Drawing.Point(27, 44);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(217, 163);
             this.groupBox4.TabIndex = 34;
@@ -448,7 +433,7 @@
             // 
             // checkCordinate
             // 
-            this.checkCordinate.Location = new System.Drawing.Point(599, 196);
+            this.checkCordinate.Location = new System.Drawing.Point(287, 54);
             this.checkCordinate.Name = "checkCordinate";
             this.checkCordinate.Size = new System.Drawing.Size(75, 23);
             this.checkCordinate.TabIndex = 35;
@@ -459,14 +444,14 @@
             // comboBoxcordinate
             // 
             this.comboBoxcordinate.FormattingEnabled = true;
-            this.comboBoxcordinate.Location = new System.Drawing.Point(692, 196);
+            this.comboBoxcordinate.Location = new System.Drawing.Point(380, 54);
             this.comboBoxcordinate.Name = "comboBoxcordinate";
             this.comboBoxcordinate.Size = new System.Drawing.Size(121, 20);
             this.comboBoxcordinate.TabIndex = 34;
             // 
             // getCordinate
             // 
-            this.getCordinate.Location = new System.Drawing.Point(830, 193);
+            this.getCordinate.Location = new System.Drawing.Point(518, 51);
             this.getCordinate.Name = "getCordinate";
             this.getCordinate.Size = new System.Drawing.Size(75, 23);
             this.getCordinate.TabIndex = 34;
@@ -477,39 +462,93 @@
             // listView3
             // 
             this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(599, 235);
+            this.listView3.Location = new System.Drawing.Point(287, 93);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(306, 67);
             this.listView3.TabIndex = 36;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(929, 483);
+            this.tabControl1.TabIndex = 37;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.scanRobot);
+            this.tabPage1.Controls.Add(this.listView1);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.motorOn);
+            this.tabPage1.Controls.Add(this.motorOff);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(921, 457);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "连接机器人";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.listView3);
+            this.tabPage2.Controls.Add(this.checkCordinate);
+            this.tabPage2.Controls.Add(this.getCordinate);
+            this.tabPage2.Controls.Add(this.comboBoxcordinate);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(921, 457);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "程序";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(495, 74);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "日志";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(94, 144);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "双击连接";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 532);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.getCordinate);
-            this.Controls.Add(this.comboBoxcordinate);
-            this.Controls.Add(this.checkCordinate);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.motorOff);
-            this.Controls.Add(this.motorOn);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(965, 532);
+            this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "C#和ABB机器人通讯";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -532,7 +571,6 @@
         private System.Windows.Forms.TextBox RX1;
         private System.Windows.Forms.TextBox RY1;
         private System.Windows.Forms.TextBox RZ1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader Version;
         private System.Windows.Forms.ColumnHeader IsVirtual;
         private System.Windows.Forms.ColumnHeader ControllerName;
@@ -540,7 +578,6 @@
         private System.Windows.Forms.Button getPos;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox statusTwo;
         private System.Windows.Forms.TextBox statusOne;
@@ -559,6 +596,11 @@
         private System.Windows.Forms.ComboBox comboBoxcordinate;
         private System.Windows.Forms.Button getCordinate;
         private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
 
