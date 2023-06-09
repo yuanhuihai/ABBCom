@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ABB.Robotics.Controllers;
 using ABB.Robotics.Controllers.Discovery;
+using ABB.Robotics.Controllers.EventLogDomain;
 using ABB.Robotics.Controllers.MotionDomain;
 using ABB.Robotics.Controllers.RapidDomain;
 using RobotStudio.Services.RobApi.RobApi1;
@@ -21,16 +22,12 @@ namespace ABBCom
 
         static Controller controller;
 
-        static bool isConnect;
-        static bool isconnecttask;
-        static bool isconnectmodule;
+
 
         static  int taskint ;
-        static string taskstring;
         static int moduleint;
-        static string modulestring ;
         static int routineint ;
-        static string routinestring;
+
 
 
         public Form1()
@@ -84,13 +81,12 @@ namespace ABBCom
                                 controller.Logoff();
                                 controller.Dispose();
                                 controller = null;
-                                isConnect = false;
+              
                             }
                             controller = ControllerFactory.CreateFrom(info);
                             controller.Logon(UserInfo.DefaultUser);
-                           isConnect = true;
-                            MessageBox.Show("已经登录控制器" + info.SystemName);
-             
+                                              MessageBox.Show("已经登录控制器" + info.SystemName);
+            
                  
                         }
                     }
@@ -197,8 +193,7 @@ namespace ABBCom
         private void motorOn_Click(object sender, EventArgs e)
         {
             
-            if (isConnect == true)//判断是否连接机器人
-            {
+         
                 try
                 {
                     if (controller.OperatingMode == ControllerOperatingMode.Auto)//判断控制箱操作模式是否为自动模式
@@ -216,11 +211,7 @@ namespace ABBCom
                 {
                     MessageBox.Show("发生意外!:" + ex.Message);
                 }
-            }
-            else
-            {
-                MessageBox.Show("请连接机器人");
-            }
+         
 
         }
 
@@ -246,83 +237,52 @@ namespace ABBCom
             }
         }
 
-        // 获取任务列表
+        // 获取任务列表 20230609
     
         private void getTask_Click(object sender, EventArgs e)
         {
-            Isconnectrobot();
-            comboBoxtask.Items.Clear();
+           
+            listTask.Items.Clear();
             
             for (int i = 0; i < (int)controller.Rapid.GetTasks().Count(); i++)
             {
-                comboBoxtask.Items.Add(controller.Rapid.GetTasks()[i].Name);
+                listTask.Items.Add(controller.Rapid.GetTasks()[i].Name);
             }
-            isconnecttask = true;
+          
         }
-        private void Isconnectrobot()//验证是否连接机器人，防止代码卡死
+
+        //获取模块列表20230609
+        private void listTask_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (isConnect == true)
+            int taskint = listTask.SelectedIndex;
+            Module[] modules = controller.Rapid.GetTasks()[taskint].GetModules();
+            for (int i = 0; i < (int)modules.Count(); i++)
             {
-            }
-            else
-            {
-                MessageBox.Show("未识别到机器人，请连机器人！");
-            }
+               
+                listModule.Items.Add(modules[i].Name);
+            };
 
 
         }
 
-        private void getModule_Click(object sender, EventArgs e)
+        //获取子程序列表20230609
+        private void listModule_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBoxmodule.Items.Clear();
-            if (isconnecttask == true)
+
+            listRoutine.Items.Clear();
+            int taskint = listTask.SelectedIndex;
+            int moduleint = listModule.SelectedIndex;
+            Routine[] routines1 = controller.Rapid.GetTasks()[taskint].GetModules()[moduleint].GetRoutines();
+            for (int i = 0; i < (int)routines1.Count(); i++)
             {
-                int taskint = comboBoxtask.SelectedIndex;
-                Module[] modules = controller.Rapid.GetTasks()[taskint].GetModules();
-                for (int i = 0; i < (int)modules.Count(); i++)
-                {
-                    comboBoxmodule.Items.Add(modules[i].Name);
-                };
+               listRoutine.Items.Add(routines1[i].Name);
             }
-            else
-            {
-                MessageBox.Show("请指定某个任务");
-            }
-            isconnectmodule = true;
 
         }
 
-        private void getProgram_Click(object sender, EventArgs e)
-        {
-            comboBoxprogram.Items.Clear();
-            if (isconnectmodule == true)
-            {
-                int taskint = comboBoxtask.SelectedIndex;
-                int moduleint = comboBoxmodule.SelectedIndex;
-                Routine[] routines1 = controller.Rapid.GetTasks()[taskint].GetModules()[moduleint].GetRoutines();
-                for (int i = 0; i < (int)routines1.Count(); i++)
-                {
-                    comboBoxprogram.Items.Add(routines1[i].Name);
-                }
-            }
-            else
-            {
-                MessageBox.Show("请指定某个模块");
-            }
-        }
+        //获取程序中点位信息 20230609
 
-        private void confirmChoice_Click(object sender, EventArgs e)
-        {
-           taskint = comboBoxtask.SelectedIndex;
-           taskstring = comboBoxtask.SelectedItem.ToString();
-           moduleint = comboBoxmodule.SelectedIndex;
-           modulestring = comboBoxmodule.SelectedItem.ToString();
-            routineint = comboBoxtask.SelectedIndex;
-            routinestring = comboBoxtask.SelectedItem.ToString();
-
-        }
-
-        private void checkCordinate_Click(object sender, EventArgs e)
+        private void listRoutine_SelectedIndexChanged(object sender, EventArgs e)
         {
             RapidSymbolSearchProperties date = RapidSymbolSearchProperties.CreateDefault();
             date.Types = SymbolTypes.Data;
@@ -331,77 +291,94 @@ namespace ABBCom
             date.InUse = false;
             date.LocalSymbols = false;
             RapidSymbol[] symbols = controller.Rapid.GetTasks()[taskint].SearchRapidSymbol(date, "robtarget", string.Empty);
-            this.comboBoxcordinate.Items.Clear();
+             listPoint.Items.Clear();
             foreach (RapidSymbol symbol in symbols)
             {
                 try
                 {
                     RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
-                    comboBoxcordinate.Items.Add(rD.Name);
-                    MessageBox.Show("没有坐标变量+2");
+                    listPoint.Items.Add(rD.Name);
+                  
                 }
                 catch (Exception)
                 {
                     return;
                 }
             }
-            if (comboBoxcordinate.Items == null)
+            if (listPoint.Items == null)
             {
-                comboBoxcordinate.Items.Add( "没有坐标变量");
-                MessageBox.Show("没有坐标变量");
+                listPoint.Items.Add("没有坐标变量");
+
             }
-      
         }
 
-        private void getCordinate_Click(object sender, EventArgs e)
+        //获取程序中点坐标具体信息20230609
+        private void listPoint_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxtask.SelectedItem.ToString() != null || comboBoxcordinate.SelectedItem.ToString() != null)
-            {
-                RapidSymbolSearchProperties date = RapidSymbolSearchProperties.CreateDefault();
-                date.Types = SymbolTypes.Data;
-                date.SearchMethod = SymbolSearchMethod.Block;
-                date.Recursive = true;
-                date.InUse = false;
-                date.LocalSymbols = false;
-                RapidSymbol[] symbols = controller.Rapid.GetTasks()[taskint].SearchRapidSymbol(date, "robtarget", string.Empty);
-                this.listView3.Items.Clear();
-                foreach (RapidSymbol symbol in symbols)
-                {
-                    try
-                    {
-                        RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
-                        if (rD.Name == comboBoxcordinate.SelectedItem.ToString())
-                        {
-                            ListViewItem item2 = new ListViewItem(symbol.Name);
-                            if (rD.Value != null)
-                            {
-                                item2.SubItems.Add(rD.Value.ToString());
-                            }
-                            else
-                            {
-                                item2.SubItems.Add("0");
-                            }
-                            item2.Tag = symbol;
+            RapidSymbolSearchProperties date = RapidSymbolSearchProperties.CreateDefault();
+            date.Types = SymbolTypes.Data;
+            date.SearchMethod = SymbolSearchMethod.Block;
+            date.Recursive = true;
+            date.InUse = false;
+            date.LocalSymbols = false;
+            RapidSymbol[] symbols = controller.Rapid.GetTasks()[taskint].SearchRapidSymbol(date, "robtarget", string.Empty);
 
-                            this.listView3.Items.Add(item2);
+            foreach (RapidSymbol symbol in symbols)
+            {
+                try
+                {
+                    RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
+                    if (rD.Name == listPoint.SelectedItem.ToString())
+                    {
+
+                        if (rD.Value != null)
+                        {
+
+                            pointInfo.Text = rD.Value.ToString();
                         }
                         else
                         {
-                            continue;
+
                         }
+
+
+
                     }
-                    catch (Exception)
+                    else
                     {
-                        return;
+                        continue;
                     }
                 }
+                catch (Exception)
+                {
+                    return;
+                }
             }
-            else
-            {
-                MessageBox.Show("请选择任务！");
-            }
-
 
         }
+
+
+
+        //20230609获取日志
+        private void getLog_Click(object sender, EventArgs e)
+        {
+            EventLog log = controller.EventLog;
+            EventLogCategory cat;
+            cat = log.GetCategory(0);
+            //0表示读取所有日志，具体见CategoryType
+          
+            {
+                foreach (EventLogMessage emsg in cat.Messages)
+                {
+                  
+               
+                    listLog.Items.Add(emsg.Timestamp + " " + emsg.Title + " " + "\r\n");   //讲每一条日志的时间戳和日志标题写入并显示
+                }
+            }
+        }
+
+       
+
+       
     }
 }
