@@ -272,11 +272,13 @@ namespace ABBCom
             listRoutine.Items.Clear();
             int taskint = listTask.SelectedIndex;
             int moduleint = listModule.SelectedIndex;
+
             Routine[] routines1 = controller.Rapid.GetTasks()[taskint].GetModules()[moduleint].GetRoutines();
             for (int i = 0; i < (int)routines1.Count(); i++)
             {
                listRoutine.Items.Add(routines1[i].Name);
-            }
+            } 
+
 
         }
 
@@ -335,13 +337,21 @@ namespace ABBCom
                         {
 
                             pointInfo.Text = rD.Value.ToString();
+
+                            RobTarget pp = (RobTarget)rD.Value;
+
+                            showX.Text= pp.Trans.X.ToString(format: "0.00");
+                            showY.Text = pp.Trans.Y.ToString(format: "0.00");
+                            showZ.Text = pp.Trans.Z.ToString(format: "0.00");
+                            showQone.Text = pp.Rot.Q1.ToString(format: "0.00");
+                            showQtwo.Text = pp.Rot.Q2.ToString(format: "0.00");
+                            showQthree.Text = pp.Rot.Q3.ToString(format: "0.00");
+                            showQfour.Text = pp.Rot.Q4.ToString(format: "0.00");
+
                         }
                         else
                         {
-
                         }
-
-
 
                     }
                     else
@@ -357,8 +367,64 @@ namespace ABBCom
 
         }
 
+        //写入Target 20230610
+        private void writeRobTarget_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                using (Mastership.Request(controller.Rapid))
+                {
+                    RapidData rd = controller.Rapid.GetRapidData(taskInfo.Text.ToString(), moduleInfo.Text.ToString(), variRobTarget.Text.ToString());
+                    RobTarget number = (RobTarget)rd.Value;
+                    number.Trans.X = Convert.ToSingle(showX.Text);
+                    number.Trans.Y = Convert.ToSingle(showY.Text);
+                    number.Trans.Z = Convert.ToSingle(showZ.Text);
+                    number.Rot.Q1 = Convert.ToSingle(showQone.Text);
+                    number.Rot.Q2 = Convert.ToSingle(showQtwo.Text);
+                    number.Rot.Q3 = Convert.ToSingle(showQthree.Text);
+                    number.Rot.Q4 = Convert.ToSingle(showQfour.Text);
+                    rd.Value = number;
+                  
+
+                }
+            }
 
 
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+
+        }
+        //读取num数值 20230610
+        private void getNum_Click(object sender, EventArgs e)
+        {
+            RapidData nnum = controller.Rapid.GetRapidData(taskInfo.Text.ToString(), moduleInfo.Text.ToString(), variNum.Text.ToString());
+            numReadValue.Text = nnum.Value.ToString();
+        }
+        //写入num数值 20230610
+        private void writeNum_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (Mastership.Request(controller.Rapid))
+                {
+                    RapidData rd = controller.Rapid.GetRapidData(taskInfo.Text.ToString(), moduleInfo.Text.ToString(), variNum.Text.ToString());
+                    Num number = (Num)rd.Value;
+                    number.FillFromString2(this.numWriteValue.Text);
+                    rd.Value = number;
+                   
+                }
+            }
+
+
+            catch(Exception ex) { MessageBox.Show(ex.ToString());  }
+        }
+
+
+
+
+        #region
+        //日志标签
+        #endregion
         //20230609获取日志
         private void getLog_Click(object sender, EventArgs e)
         {
@@ -377,8 +443,6 @@ namespace ABBCom
             }
         }
 
-       
-
-       
+        
     }
 }
