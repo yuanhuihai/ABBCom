@@ -17,23 +17,29 @@ namespace ABBCom
 {
     public partial class Form1 : Form
     {
-     
+
         NetworkScanner scanner = null;
 
         static Controller controller;
+        static ABB.Robotics.Controllers.RapidDomain.Task _task = null;
 
 
 
-        static  int taskint ;
+
+        static int taskint;
         static int moduleint;
-        static int routineint ;
+        static int routineint;
 
 
+
+
+        public string localFilePath; //rapidcode代码内容保存地址
 
         public Form1()
         {
             InitializeComponent();
-     
+        
+
 
         }
 
@@ -68,31 +74,32 @@ namespace ABBCom
         {
 
 
-                if (this.listView1.Items.Count > 0)
+            if (this.listView1.Items.Count > 0)
+            {
+                ListViewItem item = this.listView1.SelectedItems[0];
+                if (item != null)
                 {
-                    ListViewItem item = this.listView1.SelectedItems[0];
-                    if (item != null)
+                    ControllerInfo info = (ControllerInfo)item.Tag;
+                    if (info.Availability == Availability.Available)
                     {
-                        ControllerInfo info = (ControllerInfo)item.Tag;
-                        if (info.Availability == Availability.Available)
+                        if (controller != null)
                         {
-                            if (controller != null)
-                            {
-                                controller.Logoff();
-                                controller.Dispose();
-                                controller = null;
-              
-                            }
-                            controller = ControllerFactory.CreateFrom(info);
-                            controller.Logon(UserInfo.DefaultUser);
-                                              MessageBox.Show("已经登录控制器" + info.SystemName);
-            
-                 
+                            controller.Logoff();
+                            controller.Dispose();
+                            controller = null;
+
                         }
+                        controller = ControllerFactory.CreateFrom(info);
+                        controller.Logon(UserInfo.DefaultUser);
+                        MessageBox.Show("已经登录控制器" + info.SystemName);
+
+                        _task = controller.Rapid.GetTasks()[0];
+
                     }
                 }
-   
-     
+            }
+
+
 
         }
 
@@ -192,26 +199,26 @@ namespace ABBCom
 
         private void motorOn_Click(object sender, EventArgs e)
         {
-            
-         
-                try
+
+
+            try
+            {
+                if (controller.OperatingMode == ControllerOperatingMode.Auto)//判断控制箱操作模式是否为自动模式
                 {
-                    if (controller.OperatingMode == ControllerOperatingMode.Auto)//判断控制箱操作模式是否为自动模式
-                    {
-                        controller.State = ControllerState.MotorsOn;//开启电机
-                 
-                        MessageBox.Show("电机开启成功!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("请切换自动模式！");
-                    }
+                    controller.State = ControllerState.MotorsOn;//开启电机
+
+                    MessageBox.Show("电机开启成功!");
                 }
-                catch (System.Exception ex)
+                else
                 {
-                    MessageBox.Show("发生意外!:" + ex.Message);
+                    MessageBox.Show("请切换自动模式！");
                 }
-         
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("发生意外!:" + ex.Message);
+            }
+
 
         }
 
@@ -238,17 +245,17 @@ namespace ABBCom
         }
 
         // 获取任务列表 20230609
-    
+
         private void getTask_Click(object sender, EventArgs e)
         {
-           
+
             listTask.Items.Clear();
-            
+
             for (int i = 0; i < (int)controller.Rapid.GetTasks().Count(); i++)
             {
                 listTask.Items.Add(controller.Rapid.GetTasks()[i].Name);
             }
-          
+
         }
 
         //获取模块列表20230609
@@ -256,9 +263,10 @@ namespace ABBCom
         {
             int taskint = listTask.SelectedIndex;
             Module[] modules = controller.Rapid.GetTasks()[taskint].GetModules();
+            listModule.Items.Clear();
             for (int i = 0; i < (int)modules.Count(); i++)
             {
-               
+
                 listModule.Items.Add(modules[i].Name);
             };
 
@@ -272,12 +280,13 @@ namespace ABBCom
             listRoutine.Items.Clear();
             int taskint = listTask.SelectedIndex;
             int moduleint = listModule.SelectedIndex;
+        
 
             Routine[] routines1 = controller.Rapid.GetTasks()[taskint].GetModules()[moduleint].GetRoutines();
             for (int i = 0; i < (int)routines1.Count(); i++)
             {
-               listRoutine.Items.Add(routines1[i].Name);
-            } 
+                listRoutine.Items.Add(routines1[i].Name);
+            }
 
 
         }
@@ -293,14 +302,14 @@ namespace ABBCom
             date.InUse = false;
             date.LocalSymbols = false;
             RapidSymbol[] symbols = controller.Rapid.GetTasks()[taskint].SearchRapidSymbol(date, "robtarget", string.Empty);
-             listPoint.Items.Clear();
+            listPoint.Items.Clear();
             foreach (RapidSymbol symbol in symbols)
             {
                 try
                 {
                     RapidData rD = controller.Rapid.GetTasks()[taskint].GetRapidData(symbol);
                     listPoint.Items.Add(rD.Name);
-                  
+
                 }
                 catch (Exception)
                 {
@@ -340,7 +349,7 @@ namespace ABBCom
 
                             RobTarget pp = (RobTarget)rD.Value;
 
-                            showX.Text= pp.Trans.X.ToString(format: "0.00");
+                            showX.Text = pp.Trans.X.ToString(format: "0.00");
                             showY.Text = pp.Trans.Y.ToString(format: "0.00");
                             showZ.Text = pp.Trans.Z.ToString(format: "0.00");
                             showQone.Text = pp.Rot.Q1.ToString(format: "0.00");
@@ -385,7 +394,7 @@ namespace ABBCom
                     number.Rot.Q3 = Convert.ToSingle(showQthree.Text);
                     number.Rot.Q4 = Convert.ToSingle(showQfour.Text);
                     rd.Value = number;
-                  
+
 
                 }
             }
@@ -411,12 +420,12 @@ namespace ABBCom
                     Num number = (Num)rd.Value;
                     number.FillFromString2(this.numWriteValue.Text);
                     rd.Value = number;
-                   
+
                 }
             }
 
 
-            catch(Exception ex) { MessageBox.Show(ex.ToString());  }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
         }
 
 
@@ -432,17 +441,140 @@ namespace ABBCom
             EventLogCategory cat;
             cat = log.GetCategory(0);
             //0表示读取所有日志，具体见CategoryType
-          
+
             {
                 foreach (EventLogMessage emsg in cat.Messages)
                 {
-                  
-               
+
+
                     listLog.Items.Add(emsg.Timestamp + " " + emsg.Title + " " + "\r\n");   //讲每一条日志的时间戳和日志标题写入并显示
                 }
             }
         }
 
-        
+
+        #region
+        //运行程序标签
+        #endregion
+
+        // 20230611
+        private void startPro_Click(object sender, EventArgs e)
+        {
+         
+
+              using (Mastership.Request(controller.Rapid))
+                {
+                  
+                    _task.SetProgramPointer("MainModule", "main");
+                    controller.Rapid.Start();   
+                                                 
+                }
+           
+
+        }
+
+
+        //20230611 获取任务列表
+        private void getTaskOne_Click(object sender, EventArgs e)
+        {
+             listTaskOne.Items.Clear();
+
+            for (int i = 0; i < (int)controller.Rapid.GetTasks().Count(); i++)
+            {
+                listTaskOne.Items.Add(controller.Rapid.GetTasks()[i].Name);
+            }
+        }
+
+        //20230611获取选中任务的模块
+        private void listTaskOne_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int a= listTaskOne.SelectedIndex;
+            Module[] modules = controller.Rapid.GetTasks()[a].GetModules();
+            listModuleOne.Items.Clear();
+            for (int i = 0; i < (int)modules.Count(); i++)
+            {
+
+                listModuleOne.Items.Add(modules[i].Name);
+            };
+        }
+
+        //20230611 显示选择的模块
+        private void listModuleOne_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            selectedModule.Text = listModuleOne.SelectedItem.ToString();
+        }
+
+        //20230611 读取模块内容
+        private void readModule_Click(object sender, EventArgs e)
+        {
+            rapidCodeValue.Clear();
+           
+            ABB.Robotics.Controllers.RapidDomain.Module m1 = _task.GetModule(selectedModule.Text);
+            //根据currModuleName获取该模块
+            string remotePath = controller.FileSystem.RemoteDirectory + "/pctmp";
+            //获取模块到本地，需要先把模块存储到机器人控制器，并利用module.SaveToFile函数存储到本地并显示
+            //设置机器人控制器下存储的路径，此处设置为Home/pctmp
+            try
+            {
+
+                using (Mastership m = Mastership.Request(controller))
+                {
+                    if (controller.FileSystem.DirectoryExists("pctmp") == false)
+                    {
+                        //如果HOME/pctmp文件夹不存在，则创建该路径
+                        controller.FileSystem.CreateDirectory("pctmp");
+                    }
+                    m1.SaveToFile(remotePath);
+                    //将对应模块文件存储到该路径
+                    controller.FileSystem.GetFile("pctmp/" + selectedModule.Text + ".mod", selectedModule.Text + ".mod", true);
+                    //将Home/pctmp下的存储的模块存储到PC本地，默认路径为bin/Debug下
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+            string rootpath = Application.StartupPath.Substring(0, Application.StartupPath.LastIndexOf("\\"));
+            //获取C#项目路径
+           localFilePath = rootpath + "\\Debug\\" + selectedModule.Text + ".mod";
+            //存储本地module文件的路径，后续修改rapid时，先将修改后的文件存储到该路径，并从该路径传输到机器人控制器并加载到RAPID
+            string text = System.IO.File.ReadAllText(localFilePath);
+            //读取存储到本地的模块文件
+            rapidCodeValue.Text= text;
+            //将模块文件内容显示到textBox4中
+        }
+
+        //20230611 模块中写入内容
+        private void writeModule_Click(object sender, EventArgs e)
+        {
+            string strTest;
+            strTest = rapidCodeValue.Text;
+            System.IO.File.WriteAllText(localFilePath, strTest);
+            //将最新的textBox4中修改的RAPID代码存储到localFilePath路径下的模块文件
+            try
+            {
+                using (Mastership.Request(controller.Rapid))
+                {
+                    controller.FileSystem.PutFile(localFilePath, "/pctmp/" + selectedModule.Text + ".mod", true);
+                    //将localFilePath路径下的本地模块传输到机器人控制器的Home/pctmp文件夹下
+                    bool flag1 = _task.LoadModuleFromFile(controller.FileSystem.RemoteDirectory + "/pctmp/" + selectedModule.Text + ".mod", RapidLoadMode.Replace);
+                    //将Home/pctmp文件夹下的该模块加载到RAPID，如果有重复模块则替换
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            rapidCodeValue.Clear();
+            MessageBox.Show("修改成功");
+
+            //提示修改成功
+        }
     }
 }

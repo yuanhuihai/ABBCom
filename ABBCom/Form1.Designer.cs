@@ -35,11 +35,46 @@
             this.getLog = new System.Windows.Forms.Button();
             this.listLog = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.showX = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.groupBo4 = new System.Windows.Forms.GroupBox();
+            this.writeRobTarget = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.variRobTarget = new System.Windows.Forms.TextBox();
+            this.numWriteValue = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.writeNum = new System.Windows.Forms.Button();
+            this.variNum = new System.Windows.Forms.TextBox();
+            this.moduleInfo = new System.Windows.Forms.TextBox();
+            this.taskInfo = new System.Windows.Forms.TextBox();
+            this.numReadValue = new System.Windows.Forms.TextBox();
+            this.getNum = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pointInfo = new System.Windows.Forms.TextBox();
+            this.showX = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.showQfour = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.showQthree = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.showQtwo = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.showQone = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.showZ = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.showY = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.listPoint = new System.Windows.Forms.ListBox();
             this.listRoutine = new System.Windows.Forms.ListBox();
             this.getTask = new System.Windows.Forms.Button();
@@ -77,49 +112,29 @@
             this.motorOn = new System.Windows.Forms.Button();
             this.motorOff = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.showY = new System.Windows.Forms.TextBox();
-            this.showZ = new System.Windows.Forms.TextBox();
-            this.showQone = new System.Windows.Forms.TextBox();
-            this.showQtwo = new System.Windows.Forms.TextBox();
-            this.showQthree = new System.Windows.Forms.TextBox();
-            this.showQfour = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.getNum = new System.Windows.Forms.Button();
-            this.numReadValue = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBo4 = new System.Windows.Forms.GroupBox();
-            this.taskInfo = new System.Windows.Forms.TextBox();
-            this.moduleInfo = new System.Windows.Forms.TextBox();
-            this.variNum = new System.Windows.Forms.TextBox();
-            this.writeNum = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.numWriteValue = new System.Windows.Forms.TextBox();
-            this.writeRobTarget = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.variRobTarget = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.startPro = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.getTaskOne = new System.Windows.Forms.Button();
+            this.listModuleOne = new System.Windows.Forms.ListBox();
+            this.listTaskOne = new System.Windows.Forms.ListBox();
+            this.rapidCodeValue = new System.Windows.Forms.TextBox();
+            this.selectedModule = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.readModule = new System.Windows.Forms.Button();
+            this.writeModule = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.groupBo4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBo4.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -185,21 +200,237 @@
             this.tabPage2.Text = "数据读写";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(634, 349);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(257, 12);
+            this.label28.TabIndex = 75;
+            this.label28.Text = "3-数据类型是变量才允许写入，不能为constant";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(633, 287);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(221, 12);
+            this.label27.TabIndex = 74;
+            this.label27.Text = "1-在左侧robTarget中的XYZ部分写入数据";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(633, 317);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(281, 12);
+            this.label26.TabIndex = 73;
+            this.label26.Text = "2-写入都是在自动模式下，手动模式需要示教器确认";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(644, 99);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(83, 12);
+            this.label24.TabIndex = 72;
+            this.label24.Text = "robTarget列表";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(427, 99);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(53, 12);
+            this.label23.TabIndex = 71;
+            this.label23.Text = "程序列表";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(219, 99);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(53, 12);
+            this.label22.TabIndex = 70;
+            this.label22.Text = "模块列表";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(11, 99);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 12);
+            this.label21.TabIndex = 69;
+            this.label21.Text = "任务列表";
+            // 
+            // groupBo4
+            // 
+            this.groupBo4.Controls.Add(this.writeRobTarget);
+            this.groupBo4.Controls.Add(this.label25);
+            this.groupBo4.Controls.Add(this.variRobTarget);
+            this.groupBo4.Controls.Add(this.numWriteValue);
+            this.groupBo4.Controls.Add(this.label20);
+            this.groupBo4.Controls.Add(this.label19);
+            this.groupBo4.Controls.Add(this.label9);
+            this.groupBo4.Controls.Add(this.writeNum);
+            this.groupBo4.Controls.Add(this.variNum);
+            this.groupBo4.Controls.Add(this.moduleInfo);
+            this.groupBo4.Controls.Add(this.taskInfo);
+            this.groupBo4.Controls.Add(this.numReadValue);
+            this.groupBo4.Controls.Add(this.getNum);
+            this.groupBo4.Location = new System.Drawing.Point(338, 267);
+            this.groupBo4.Name = "groupBo4";
+            this.groupBo4.Size = new System.Drawing.Size(283, 208);
+            this.groupBo4.TabIndex = 64;
+            this.groupBo4.TabStop = false;
+            this.groupBo4.Text = "Num和robTarget读写";
+            // 
+            // writeRobTarget
+            // 
+            this.writeRobTarget.Location = new System.Drawing.Point(180, 112);
+            this.writeRobTarget.Name = "writeRobTarget";
+            this.writeRobTarget.Size = new System.Drawing.Size(93, 23);
+            this.writeRobTarget.TabIndex = 70;
+            this.writeRobTarget.Text = "写入robTarget";
+            this.writeRobTarget.UseVisualStyleBackColor = true;
+            this.writeRobTarget.Click += new System.EventHandler(this.writeRobTarget_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(178, 70);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(95, 12);
+            this.label25.TabIndex = 71;
+            this.label25.Text = "robTarget变量名";
+            // 
+            // variRobTarget
+            // 
+            this.variRobTarget.Location = new System.Drawing.Point(180, 85);
+            this.variRobTarget.Name = "variRobTarget";
+            this.variRobTarget.Size = new System.Drawing.Size(93, 21);
+            this.variRobTarget.TabIndex = 70;
+            // 
+            // numWriteValue
+            // 
+            this.numWriteValue.Location = new System.Drawing.Point(91, 163);
+            this.numWriteValue.Name = "numWriteValue";
+            this.numWriteValue.Size = new System.Drawing.Size(53, 21);
+            this.numWriteValue.TabIndex = 69;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(8, 88);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(59, 12);
+            this.label20.TabIndex = 68;
+            this.label20.Text = "num变量名";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(8, 61);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 12);
+            this.label19.TabIndex = 67;
+            this.label19.Text = "模块名";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(8, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 65;
+            this.label9.Text = "任务名";
+            // 
+            // writeNum
+            // 
+            this.writeNum.Location = new System.Drawing.Point(6, 161);
+            this.writeNum.Name = "writeNum";
+            this.writeNum.Size = new System.Drawing.Size(75, 23);
+            this.writeNum.TabIndex = 66;
+            this.writeNum.Text = "写入Num";
+            this.writeNum.UseVisualStyleBackColor = true;
+            this.writeNum.Click += new System.EventHandler(this.writeNum_Click);
+            // 
+            // variNum
+            // 
+            this.variNum.Location = new System.Drawing.Point(68, 85);
+            this.variNum.Name = "variNum";
+            this.variNum.Size = new System.Drawing.Size(76, 21);
+            this.variNum.TabIndex = 65;
+            // 
+            // moduleInfo
+            // 
+            this.moduleInfo.Location = new System.Drawing.Point(68, 58);
+            this.moduleInfo.Name = "moduleInfo";
+            this.moduleInfo.Size = new System.Drawing.Size(76, 21);
+            this.moduleInfo.TabIndex = 64;
+            // 
+            // taskInfo
+            // 
+            this.taskInfo.Location = new System.Drawing.Point(68, 31);
+            this.taskInfo.Name = "taskInfo";
+            this.taskInfo.Size = new System.Drawing.Size(76, 21);
+            this.taskInfo.TabIndex = 63;
+            // 
+            // numReadValue
+            // 
+            this.numReadValue.Location = new System.Drawing.Point(91, 127);
+            this.numReadValue.Name = "numReadValue";
+            this.numReadValue.Size = new System.Drawing.Size(53, 21);
+            this.numReadValue.TabIndex = 62;
+            // 
+            // getNum
+            // 
+            this.getNum.Location = new System.Drawing.Point(6, 125);
+            this.getNum.Name = "getNum";
+            this.getNum.Size = new System.Drawing.Size(75, 23);
+            this.getNum.TabIndex = 61;
+            this.getNum.Text = "获取Num";
+            this.getNum.UseVisualStyleBackColor = true;
+            this.getNum.Click += new System.EventHandler(this.getNum_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.pointInfo);
+            this.groupBox2.Controls.Add(this.showX);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.showQfour);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.showQthree);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.showQtwo);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.showQone);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.showZ);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.showY);
+            this.groupBox2.Location = new System.Drawing.Point(13, 267);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(293, 220);
+            this.groupBox2.TabIndex = 63;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "robTarget信息";
+            // 
+            // pointInfo
+            // 
+            this.pointInfo.Location = new System.Drawing.Point(6, 20);
+            this.pointInfo.Multiline = true;
+            this.pointInfo.Name = "pointInfo";
+            this.pointInfo.Size = new System.Drawing.Size(156, 128);
+            this.pointInfo.TabIndex = 41;
+            // 
             // showX
             // 
             this.showX.Location = new System.Drawing.Point(208, 23);
             this.showX.Name = "showX";
             this.showX.Size = new System.Drawing.Size(79, 21);
             this.showX.TabIndex = 47;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(185, 55);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 12);
-            this.label11.TabIndex = 46;
-            this.label11.Text = "Y";
             // 
             // label10
             // 
@@ -210,6 +441,120 @@
             this.label10.TabIndex = 45;
             this.label10.Text = "X";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(185, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(11, 12);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Y";
+            // 
+            // showQfour
+            // 
+            this.showQfour.Location = new System.Drawing.Point(208, 187);
+            this.showQfour.Name = "showQfour";
+            this.showQfour.Size = new System.Drawing.Size(79, 21);
+            this.showQfour.TabIndex = 59;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(185, 82);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(11, 12);
+            this.label13.TabIndex = 49;
+            this.label13.Text = "Z";
+            // 
+            // showQthree
+            // 
+            this.showQthree.Location = new System.Drawing.Point(208, 161);
+            this.showQthree.Name = "showQthree";
+            this.showQthree.Size = new System.Drawing.Size(79, 21);
+            this.showQthree.TabIndex = 58;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(185, 108);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(17, 12);
+            this.label16.TabIndex = 50;
+            this.label16.Text = "Q1";
+            // 
+            // showQtwo
+            // 
+            this.showQtwo.Location = new System.Drawing.Point(208, 133);
+            this.showQtwo.Name = "showQtwo";
+            this.showQtwo.Size = new System.Drawing.Size(79, 21);
+            this.showQtwo.TabIndex = 57;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(185, 138);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(17, 12);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "Q2";
+            // 
+            // showQone
+            // 
+            this.showQone.Location = new System.Drawing.Point(208, 104);
+            this.showQone.Name = "showQone";
+            this.showQone.Size = new System.Drawing.Size(79, 21);
+            this.showQone.TabIndex = 56;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(185, 166);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(17, 12);
+            this.label14.TabIndex = 52;
+            this.label14.Text = "Q3";
+            // 
+            // showZ
+            // 
+            this.showZ.Location = new System.Drawing.Point(208, 77);
+            this.showZ.Name = "showZ";
+            this.showZ.Size = new System.Drawing.Size(79, 21);
+            this.showZ.TabIndex = 55;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(185, 191);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(17, 12);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "Q4";
+            // 
+            // showY
+            // 
+            this.showY.Location = new System.Drawing.Point(208, 50);
+            this.showY.Name = "showY";
+            this.showY.Size = new System.Drawing.Size(79, 21);
+            this.showY.TabIndex = 54;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(187, 56);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(263, 12);
+            this.label18.TabIndex = 60;
+            this.label18.Text = "3-选择列表中robTarget，对应的显示出坐标信息";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(187, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(275, 12);
+            this.label12.TabIndex = 48;
+            this.label12.Text = "2-依次选择，最后显示相应程序中的robTarget类型";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -218,14 +563,6 @@
             this.label1.Size = new System.Drawing.Size(305, 12);
             this.label1.TabIndex = 44;
             this.label1.Text = "1-获取任务列表，鼠标选择任务，对对应的模块信息显示";
-            // 
-            // pointInfo
-            // 
-            this.pointInfo.Location = new System.Drawing.Point(6, 20);
-            this.pointInfo.Multiline = true;
-            this.pointInfo.Name = "pointInfo";
-            this.pointInfo.Size = new System.Drawing.Size(156, 128);
-            this.pointInfo.TabIndex = 41;
             // 
             // listPoint
             // 
@@ -569,333 +906,144 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(929, 526);
             this.tabControl1.TabIndex = 37;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(187, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(275, 12);
-            this.label12.TabIndex = 48;
-            this.label12.Text = "2-依次选择，最后显示相应程序中的robTarget类型";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(185, 82);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 12);
-            this.label13.TabIndex = 49;
-            this.label13.Text = "Z";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(185, 166);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(17, 12);
-            this.label14.TabIndex = 52;
-            this.label14.Text = "Q3";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(185, 138);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(17, 12);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Q2";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(185, 108);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(17, 12);
-            this.label16.TabIndex = 50;
-            this.label16.Text = "Q1";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(185, 191);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(17, 12);
-            this.label17.TabIndex = 53;
-            this.label17.Text = "Q4";
-            // 
-            // showY
-            // 
-            this.showY.Location = new System.Drawing.Point(208, 50);
-            this.showY.Name = "showY";
-            this.showY.Size = new System.Drawing.Size(79, 21);
-            this.showY.TabIndex = 54;
-            // 
-            // showZ
-            // 
-            this.showZ.Location = new System.Drawing.Point(208, 77);
-            this.showZ.Name = "showZ";
-            this.showZ.Size = new System.Drawing.Size(79, 21);
-            this.showZ.TabIndex = 55;
-            // 
-            // showQone
-            // 
-            this.showQone.Location = new System.Drawing.Point(208, 104);
-            this.showQone.Name = "showQone";
-            this.showQone.Size = new System.Drawing.Size(79, 21);
-            this.showQone.TabIndex = 56;
-            // 
-            // showQtwo
-            // 
-            this.showQtwo.Location = new System.Drawing.Point(208, 133);
-            this.showQtwo.Name = "showQtwo";
-            this.showQtwo.Size = new System.Drawing.Size(79, 21);
-            this.showQtwo.TabIndex = 57;
-            // 
-            // showQthree
-            // 
-            this.showQthree.Location = new System.Drawing.Point(208, 161);
-            this.showQthree.Name = "showQthree";
-            this.showQthree.Size = new System.Drawing.Size(79, 21);
-            this.showQthree.TabIndex = 58;
-            // 
-            // showQfour
-            // 
-            this.showQfour.Location = new System.Drawing.Point(208, 187);
-            this.showQfour.Name = "showQfour";
-            this.showQfour.Size = new System.Drawing.Size(79, 21);
-            this.showQfour.TabIndex = 59;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(187, 56);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(263, 12);
-            this.label18.TabIndex = 60;
-            this.label18.Text = "3-选择列表中robTarget，对应的显示出坐标信息";
-            // 
-            // getNum
-            // 
-            this.getNum.Location = new System.Drawing.Point(6, 125);
-            this.getNum.Name = "getNum";
-            this.getNum.Size = new System.Drawing.Size(75, 23);
-            this.getNum.TabIndex = 61;
-            this.getNum.Text = "获取Num";
-            this.getNum.UseVisualStyleBackColor = true;
-            this.getNum.Click += new System.EventHandler(this.getNum_Click);
-            // 
-            // numReadValue
-            // 
-            this.numReadValue.Location = new System.Drawing.Point(91, 127);
-            this.numReadValue.Name = "numReadValue";
-            this.numReadValue.Size = new System.Drawing.Size(53, 21);
-            this.numReadValue.TabIndex = 62;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pointInfo);
-            this.groupBox2.Controls.Add(this.showX);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.showQfour);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.showQthree);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.showQtwo);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.showQone);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.showZ);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.showY);
-            this.groupBox2.Location = new System.Drawing.Point(13, 267);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 220);
-            this.groupBox2.TabIndex = 63;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "robTarget信息";
-            // 
-            // groupBo4
-            // 
-            this.groupBo4.Controls.Add(this.writeRobTarget);
-            this.groupBo4.Controls.Add(this.label25);
-            this.groupBo4.Controls.Add(this.variRobTarget);
-            this.groupBo4.Controls.Add(this.numWriteValue);
-            this.groupBo4.Controls.Add(this.label20);
-            this.groupBo4.Controls.Add(this.label19);
-            this.groupBo4.Controls.Add(this.label9);
-            this.groupBo4.Controls.Add(this.writeNum);
-            this.groupBo4.Controls.Add(this.variNum);
-            this.groupBo4.Controls.Add(this.moduleInfo);
-            this.groupBo4.Controls.Add(this.taskInfo);
-            this.groupBo4.Controls.Add(this.numReadValue);
-            this.groupBo4.Controls.Add(this.getNum);
-            this.groupBo4.Location = new System.Drawing.Point(338, 267);
-            this.groupBo4.Name = "groupBo4";
-            this.groupBo4.Size = new System.Drawing.Size(283, 208);
-            this.groupBo4.TabIndex = 64;
-            this.groupBo4.TabStop = false;
-            this.groupBo4.Text = "Num和robTarget读写";
-            // 
-            // taskInfo
-            // 
-            this.taskInfo.Location = new System.Drawing.Point(68, 31);
-            this.taskInfo.Name = "taskInfo";
-            this.taskInfo.Size = new System.Drawing.Size(76, 21);
-            this.taskInfo.TabIndex = 63;
-            // 
-            // moduleInfo
-            // 
-            this.moduleInfo.Location = new System.Drawing.Point(68, 58);
-            this.moduleInfo.Name = "moduleInfo";
-            this.moduleInfo.Size = new System.Drawing.Size(76, 21);
-            this.moduleInfo.TabIndex = 64;
-            // 
-            // variNum
-            // 
-            this.variNum.Location = new System.Drawing.Point(68, 85);
-            this.variNum.Name = "variNum";
-            this.variNum.Size = new System.Drawing.Size(76, 21);
-            this.variNum.TabIndex = 65;
-            // 
-            // writeNum
-            // 
-            this.writeNum.Location = new System.Drawing.Point(6, 161);
-            this.writeNum.Name = "writeNum";
-            this.writeNum.Size = new System.Drawing.Size(75, 23);
-            this.writeNum.TabIndex = 66;
-            this.writeNum.Text = "写入Num";
-            this.writeNum.UseVisualStyleBackColor = true;
-            this.writeNum.Click += new System.EventHandler(this.writeNum_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 34);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 65;
-            this.label9.Text = "任务名";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 61);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 12);
-            this.label19.TabIndex = 67;
-            this.label19.Text = "模块名";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(8, 88);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(59, 12);
-            this.label20.TabIndex = 68;
-            this.label20.Text = "num变量名";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(11, 99);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(53, 12);
-            this.label21.TabIndex = 69;
-            this.label21.Text = "任务列表";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(219, 99);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(53, 12);
-            this.label22.TabIndex = 70;
-            this.label22.Text = "模块列表";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(427, 99);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(53, 12);
-            this.label23.TabIndex = 71;
-            this.label23.Text = "程序列表";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(644, 99);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(83, 12);
-            this.label24.TabIndex = 72;
-            this.label24.Text = "robTarget列表";
-            // 
-            // numWriteValue
-            // 
-            this.numWriteValue.Location = new System.Drawing.Point(91, 163);
-            this.numWriteValue.Name = "numWriteValue";
-            this.numWriteValue.Size = new System.Drawing.Size(53, 21);
-            this.numWriteValue.TabIndex = 69;
-            // 
-            // writeRobTarget
-            // 
-            this.writeRobTarget.Location = new System.Drawing.Point(180, 112);
-            this.writeRobTarget.Name = "writeRobTarget";
-            this.writeRobTarget.Size = new System.Drawing.Size(93, 23);
-            this.writeRobTarget.TabIndex = 70;
-            this.writeRobTarget.Text = "写入robTarget";
-            this.writeRobTarget.UseVisualStyleBackColor = true;
-            this.writeRobTarget.Click += new System.EventHandler(this.writeRobTarget_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(178, 70);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(95, 12);
-            this.label25.TabIndex = 71;
-            this.label25.Text = "robTarget变量名";
-            // 
-            // variRobTarget
-            // 
-            this.variRobTarget.Location = new System.Drawing.Point(180, 85);
-            this.variRobTarget.Name = "variRobTarget";
-            this.variRobTarget.Size = new System.Drawing.Size(93, 21);
-            this.variRobTarget.TabIndex = 70;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(633, 317);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(281, 12);
-            this.label26.TabIndex = 73;
-            this.label26.Text = "2-写入都是在自动模式下，手动模式需要示教器确认";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(633, 287);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(221, 12);
-            this.label27.TabIndex = 74;
-            this.label27.Text = "1-在左侧robTarget中的XYZ部分写入数据";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(634, 349);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(257, 12);
-            this.label28.TabIndex = 75;
-            this.label28.Text = "3-数据类型是变量才允许写入，不能为constant";
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.writeModule);
+            this.tabPage4.Controls.Add(this.readModule);
+            this.tabPage4.Controls.Add(this.label31);
+            this.tabPage4.Controls.Add(this.selectedModule);
+            this.tabPage4.Controls.Add(this.rapidCodeValue);
+            this.tabPage4.Controls.Add(this.label29);
+            this.tabPage4.Controls.Add(this.label30);
+            this.tabPage4.Controls.Add(this.getTaskOne);
+            this.tabPage4.Controls.Add(this.listModuleOne);
+            this.tabPage4.Controls.Add(this.listTaskOne);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(921, 500);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "读写Rapid代码";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.startPro);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(921, 500);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "程序运行";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // startPro
+            // 
+            this.startPro.Location = new System.Drawing.Point(91, 157);
+            this.startPro.Name = "startPro";
+            this.startPro.Size = new System.Drawing.Size(75, 23);
+            this.startPro.TabIndex = 0;
+            this.startPro.Text = "运行";
+            this.startPro.UseVisualStyleBackColor = true;
+            this.startPro.Click += new System.EventHandler(this.startPro_Click);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(15, 162);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(53, 12);
+            this.label29.TabIndex = 75;
+            this.label29.Text = "模块列表";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(15, 60);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(53, 12);
+            this.label30.TabIndex = 74;
+            this.label30.Text = "任务列表";
+            // 
+            // getTaskOne
+            // 
+            this.getTaskOne.Location = new System.Drawing.Point(59, 21);
+            this.getTaskOne.Name = "getTaskOne";
+            this.getTaskOne.Size = new System.Drawing.Size(86, 23);
+            this.getTaskOne.TabIndex = 71;
+            this.getTaskOne.Text = "获取任务列表";
+            this.getTaskOne.UseVisualStyleBackColor = true;
+            this.getTaskOne.Click += new System.EventHandler(this.getTaskOne_Click);
+            // 
+            // listModuleOne
+            // 
+            this.listModuleOne.FormattingEnabled = true;
+            this.listModuleOne.ItemHeight = 12;
+            this.listModuleOne.Location = new System.Drawing.Point(17, 177);
+            this.listModuleOne.Name = "listModuleOne";
+            this.listModuleOne.Size = new System.Drawing.Size(128, 148);
+            this.listModuleOne.TabIndex = 73;
+            this.listModuleOne.SelectedIndexChanged += new System.EventHandler(this.listModuleOne_SelectedIndexChanged);
+            // 
+            // listTaskOne
+            // 
+            this.listTaskOne.FormattingEnabled = true;
+            this.listTaskOne.ItemHeight = 12;
+            this.listTaskOne.Location = new System.Drawing.Point(17, 75);
+            this.listTaskOne.Name = "listTaskOne";
+            this.listTaskOne.Size = new System.Drawing.Size(128, 76);
+            this.listTaskOne.TabIndex = 72;
+            this.listTaskOne.SelectedIndexChanged += new System.EventHandler(this.listTaskOne_SelectedIndexChanged);
+            // 
+            // rapidCodeValue
+            // 
+            this.rapidCodeValue.Location = new System.Drawing.Point(208, 23);
+            this.rapidCodeValue.Multiline = true;
+            this.rapidCodeValue.Name = "rapidCodeValue";
+            this.rapidCodeValue.Size = new System.Drawing.Size(694, 430);
+            this.rapidCodeValue.TabIndex = 76;
+            // 
+            // selectedModule
+            // 
+            this.selectedModule.Location = new System.Drawing.Point(17, 382);
+            this.selectedModule.Name = "selectedModule";
+            this.selectedModule.Size = new System.Drawing.Size(100, 21);
+            this.selectedModule.TabIndex = 77;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(15, 367);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 78;
+            this.label31.Text = "选中的模块";
+            // 
+            // readModule
+            // 
+            this.readModule.Location = new System.Drawing.Point(17, 421);
+            this.readModule.Name = "readModule";
+            this.readModule.Size = new System.Drawing.Size(86, 23);
+            this.readModule.TabIndex = 79;
+            this.readModule.Text = "读取";
+            this.readModule.UseVisualStyleBackColor = true;
+            this.readModule.Click += new System.EventHandler(this.readModule_Click);
+            // 
+            // writeModule
+            // 
+            this.writeModule.Location = new System.Drawing.Point(17, 450);
+            this.writeModule.Name = "writeModule";
+            this.writeModule.Size = new System.Drawing.Size(86, 23);
+            this.writeModule.TabIndex = 80;
+            this.writeModule.Text = "写入";
+            this.writeModule.UseVisualStyleBackColor = true;
+            this.writeModule.Click += new System.EventHandler(this.writeModule_Click);
             // 
             // Form1
             // 
@@ -909,6 +1057,10 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.groupBo4.ResumeLayout(false);
+            this.groupBo4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -916,10 +1068,9 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBo4.ResumeLayout(false);
-            this.groupBo4.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1007,6 +1158,19 @@
         private System.Windows.Forms.TextBox variRobTarget;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button startPro;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button getTaskOne;
+        private System.Windows.Forms.ListBox listModuleOne;
+        private System.Windows.Forms.ListBox listTaskOne;
+        private System.Windows.Forms.TextBox rapidCodeValue;
+        private System.Windows.Forms.Button readModule;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox selectedModule;
+        private System.Windows.Forms.Button writeModule;
     }
 }
 
