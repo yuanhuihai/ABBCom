@@ -113,18 +113,31 @@
             this.motorOff = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.startPro = new System.Windows.Forms.Button();
+            this.writeModule = new System.Windows.Forms.Button();
+            this.readModule = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
+            this.selectedModule = new System.Windows.Forms.TextBox();
+            this.rapidCodeValue = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.getTaskOne = new System.Windows.Forms.Button();
             this.listModuleOne = new System.Windows.Forms.ListBox();
             this.listTaskOne = new System.Windows.Forms.ListBox();
-            this.rapidCodeValue = new System.Windows.Forms.TextBox();
-            this.selectedModule = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.readModule = new System.Windows.Forms.Button();
-            this.writeModule = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.startPro = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.moduleName = new System.Windows.Forms.TextBox();
+            this.proName = new System.Windows.Forms.TextBox();
+            this.stopPro = new System.Windows.Forms.Button();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label39 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBo4.SuspendLayout();
@@ -135,6 +148,7 @@
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -933,25 +947,49 @@
             this.tabPage4.Text = "读写Rapid代码";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
+            // writeModule
             // 
-            this.tabPage5.Controls.Add(this.startPro);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(921, 500);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "程序运行";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.writeModule.Location = new System.Drawing.Point(17, 450);
+            this.writeModule.Name = "writeModule";
+            this.writeModule.Size = new System.Drawing.Size(86, 23);
+            this.writeModule.TabIndex = 80;
+            this.writeModule.Text = "写入";
+            this.writeModule.UseVisualStyleBackColor = true;
+            this.writeModule.Click += new System.EventHandler(this.writeModule_Click);
             // 
-            // startPro
+            // readModule
             // 
-            this.startPro.Location = new System.Drawing.Point(91, 157);
-            this.startPro.Name = "startPro";
-            this.startPro.Size = new System.Drawing.Size(75, 23);
-            this.startPro.TabIndex = 0;
-            this.startPro.Text = "运行";
-            this.startPro.UseVisualStyleBackColor = true;
-            this.startPro.Click += new System.EventHandler(this.startPro_Click);
+            this.readModule.Location = new System.Drawing.Point(17, 421);
+            this.readModule.Name = "readModule";
+            this.readModule.Size = new System.Drawing.Size(86, 23);
+            this.readModule.TabIndex = 79;
+            this.readModule.Text = "读取";
+            this.readModule.UseVisualStyleBackColor = true;
+            this.readModule.Click += new System.EventHandler(this.readModule_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(15, 367);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(65, 12);
+            this.label31.TabIndex = 78;
+            this.label31.Text = "选中的模块";
+            // 
+            // selectedModule
+            // 
+            this.selectedModule.Location = new System.Drawing.Point(17, 382);
+            this.selectedModule.Name = "selectedModule";
+            this.selectedModule.Size = new System.Drawing.Size(100, 21);
+            this.selectedModule.TabIndex = 77;
+            // 
+            // rapidCodeValue
+            // 
+            this.rapidCodeValue.Location = new System.Drawing.Point(208, 23);
+            this.rapidCodeValue.Multiline = true;
+            this.rapidCodeValue.Name = "rapidCodeValue";
+            this.rapidCodeValue.Size = new System.Drawing.Size(694, 430);
+            this.rapidCodeValue.TabIndex = 76;
             // 
             // label29
             // 
@@ -1001,49 +1039,151 @@
             this.listTaskOne.TabIndex = 72;
             this.listTaskOne.SelectedIndexChanged += new System.EventHandler(this.listTaskOne_SelectedIndexChanged);
             // 
-            // rapidCodeValue
+            // tabPage5
             // 
-            this.rapidCodeValue.Location = new System.Drawing.Point(208, 23);
-            this.rapidCodeValue.Multiline = true;
-            this.rapidCodeValue.Name = "rapidCodeValue";
-            this.rapidCodeValue.Size = new System.Drawing.Size(694, 430);
-            this.rapidCodeValue.TabIndex = 76;
+            this.tabPage5.Controls.Add(this.label39);
+            this.tabPage5.Controls.Add(this.pictureBox1);
+            this.tabPage5.Controls.Add(this.label38);
+            this.tabPage5.Controls.Add(this.label37);
+            this.tabPage5.Controls.Add(this.label36);
+            this.tabPage5.Controls.Add(this.label35);
+            this.tabPage5.Controls.Add(this.stopPro);
+            this.tabPage5.Controls.Add(this.proName);
+            this.tabPage5.Controls.Add(this.moduleName);
+            this.tabPage5.Controls.Add(this.textBox1);
+            this.tabPage5.Controls.Add(this.label34);
+            this.tabPage5.Controls.Add(this.label33);
+            this.tabPage5.Controls.Add(this.label32);
+            this.tabPage5.Controls.Add(this.startPro);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(921, 500);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "程序运行";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // selectedModule
+            // startPro
             // 
-            this.selectedModule.Location = new System.Drawing.Point(17, 382);
-            this.selectedModule.Name = "selectedModule";
-            this.selectedModule.Size = new System.Drawing.Size(100, 21);
-            this.selectedModule.TabIndex = 77;
+            this.startPro.Location = new System.Drawing.Point(22, 186);
+            this.startPro.Name = "startPro";
+            this.startPro.Size = new System.Drawing.Size(75, 23);
+            this.startPro.TabIndex = 0;
+            this.startPro.Text = "运行";
+            this.startPro.UseVisualStyleBackColor = true;
+            this.startPro.Click += new System.EventHandler(this.startPro_Click);
             // 
-            // label31
+            // label32
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(15, 367);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(65, 12);
-            this.label31.TabIndex = 78;
-            this.label31.Text = "选中的模块";
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(20, 42);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(77, 12);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "请输入任务：";
             // 
-            // readModule
+            // label33
             // 
-            this.readModule.Location = new System.Drawing.Point(17, 421);
-            this.readModule.Name = "readModule";
-            this.readModule.Size = new System.Drawing.Size(86, 23);
-            this.readModule.TabIndex = 79;
-            this.readModule.Text = "读取";
-            this.readModule.UseVisualStyleBackColor = true;
-            this.readModule.Click += new System.EventHandler(this.readModule_Click);
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(20, 90);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(77, 12);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "请输入模块：";
             // 
-            // writeModule
+            // label34
             // 
-            this.writeModule.Location = new System.Drawing.Point(17, 450);
-            this.writeModule.Name = "writeModule";
-            this.writeModule.Size = new System.Drawing.Size(86, 23);
-            this.writeModule.TabIndex = 80;
-            this.writeModule.Text = "写入";
-            this.writeModule.UseVisualStyleBackColor = true;
-            this.writeModule.Click += new System.EventHandler(this.writeModule_Click);
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(20, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(77, 12);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "请输入程序：";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(91, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "T_ROB1";
+            // 
+            // moduleName
+            // 
+            this.moduleName.Location = new System.Drawing.Point(91, 87);
+            this.moduleName.Name = "moduleName";
+            this.moduleName.Size = new System.Drawing.Size(100, 21);
+            this.moduleName.TabIndex = 5;
+            // 
+            // proName
+            // 
+            this.proName.Location = new System.Drawing.Point(91, 127);
+            this.proName.Name = "proName";
+            this.proName.Size = new System.Drawing.Size(100, 21);
+            this.proName.TabIndex = 6;
+            // 
+            // stopPro
+            // 
+            this.stopPro.Location = new System.Drawing.Point(116, 186);
+            this.stopPro.Name = "stopPro";
+            this.stopPro.Size = new System.Drawing.Size(75, 23);
+            this.stopPro.TabIndex = 7;
+            this.stopPro.Text = "结束";
+            this.stopPro.UseVisualStyleBackColor = true;
+            this.stopPro.Click += new System.EventHandler(this.stopPro_Click);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(213, 42);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(239, 12);
+            this.label35.TabIndex = 8;
+            this.label35.Text = "_task = controller.Rapid.GetTasks()[0];";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(213, 90);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(281, 12);
+            this.label36.TabIndex = 9;
+            this.label36.Text = " _task.SetProgramPointer(\"Module\", \"Routine\");";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(213, 136);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(173, 12);
+            this.label37.TabIndex = 10;
+            this.label37.Text = " controller.Rapid.Start();  ";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(20, 253);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(257, 12);
+            this.label38.TabIndex = 11;
+            this.label38.Text = "备注：模块名、程序名可以在数据读写页面看到";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(572, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(299, 216);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(581, 253);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(59, 12);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "Rapid结构";
             // 
             // Form1
             // 
@@ -1071,6 +1211,8 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1171,6 +1313,19 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox selectedModule;
         private System.Windows.Forms.Button writeModule;
+        private System.Windows.Forms.Button stopPro;
+        private System.Windows.Forms.TextBox proName;
+        private System.Windows.Forms.TextBox moduleName;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label39;
     }
 }
 

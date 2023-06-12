@@ -457,7 +457,7 @@ namespace ABBCom
         //运行程序标签
         #endregion
 
-        // 20230611
+        // 20230611选择程序运行
         private void startPro_Click(object sender, EventArgs e)
         {
          
@@ -465,12 +465,21 @@ namespace ABBCom
               using (Mastership.Request(controller.Rapid))
                 {
                   
-                    _task.SetProgramPointer("MainModule", "main");
+                    _task.SetProgramPointer(moduleName.Text, proName.Text);
                     controller.Rapid.Start();   
                                                  
                 }
            
 
+        }
+        //20230613结束程序运行
+        private void stopPro_Click(object sender, EventArgs e)
+        {
+            using (Mastership.Request(controller.Rapid))
+            {
+
+                controller.Rapid.Stop(StopMode.Immediate);
+            }
         }
 
 
@@ -576,5 +585,9 @@ namespace ABBCom
 
             //提示修改成功
         }
+
+
+
+       
     }
 }
