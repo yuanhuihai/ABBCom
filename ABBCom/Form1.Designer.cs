@@ -124,20 +124,31 @@
             this.listModuleOne = new System.Windows.Forms.ListBox();
             this.listTaskOne = new System.Windows.Forms.ListBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.startPro = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.moduleName = new System.Windows.Forms.TextBox();
-            this.proName = new System.Windows.Forms.TextBox();
-            this.stopPro = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label39 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.stopPro = new System.Windows.Forms.Button();
+            this.proName = new System.Windows.Forms.TextBox();
+            this.moduleName = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.startPro = new System.Windows.Forms.Button();
+            this.runStatus = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.bugTest = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.listViewIO = new System.Windows.Forms.ListView();
+            this.getIOsignal = new System.Windows.Forms.Button();
+            this.IOname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IOtype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.IOvalue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.getIOunit = new System.Windows.Forms.Button();
+            this.listBoxIOunit = new System.Windows.Forms.ListBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBo4.SuspendLayout();
@@ -149,6 +160,7 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -163,7 +175,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(921, 500);
+            this.tabPage3.Size = new System.Drawing.Size(921, 451);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "日志";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -209,7 +221,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(921, 500);
+            this.tabPage2.Size = new System.Drawing.Size(921, 451);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "数据读写";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -217,7 +229,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(634, 349);
+            this.label28.Location = new System.Drawing.Point(634, 304);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(257, 12);
             this.label28.TabIndex = 75;
@@ -226,7 +238,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(633, 287);
+            this.label27.Location = new System.Drawing.Point(633, 242);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(221, 12);
             this.label27.TabIndex = 74;
@@ -235,7 +247,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(633, 317);
+            this.label26.Location = new System.Drawing.Point(633, 272);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(281, 12);
             this.label26.TabIndex = 73;
@@ -244,7 +256,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(644, 99);
+            this.label24.Location = new System.Drawing.Point(635, 63);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(83, 12);
             this.label24.TabIndex = 72;
@@ -292,7 +304,7 @@
             this.groupBo4.Controls.Add(this.taskInfo);
             this.groupBo4.Controls.Add(this.numReadValue);
             this.groupBo4.Controls.Add(this.getNum);
-            this.groupBo4.Location = new System.Drawing.Point(338, 267);
+            this.groupBo4.Location = new System.Drawing.Point(338, 222);
             this.groupBo4.Name = "groupBo4";
             this.groupBo4.Size = new System.Drawing.Size(283, 208);
             this.groupBo4.TabIndex = 64;
@@ -424,7 +436,7 @@
             this.groupBox2.Controls.Add(this.showZ);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.showY);
-            this.groupBox2.Location = new System.Drawing.Point(13, 267);
+            this.groupBox2.Location = new System.Drawing.Point(13, 222);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(293, 220);
             this.groupBox2.TabIndex = 63;
@@ -582,7 +594,7 @@
             // 
             this.listPoint.FormattingEnabled = true;
             this.listPoint.ItemHeight = 12;
-            this.listPoint.Location = new System.Drawing.Point(646, 114);
+            this.listPoint.Location = new System.Drawing.Point(637, 78);
             this.listPoint.Name = "listPoint";
             this.listPoint.Size = new System.Drawing.Size(202, 136);
             this.listPoint.TabIndex = 40;
@@ -594,7 +606,7 @@
             this.listRoutine.ItemHeight = 12;
             this.listRoutine.Location = new System.Drawing.Point(429, 114);
             this.listRoutine.Name = "listRoutine";
-            this.listRoutine.Size = new System.Drawing.Size(202, 136);
+            this.listRoutine.Size = new System.Drawing.Size(202, 100);
             this.listRoutine.TabIndex = 39;
             this.listRoutine.SelectedIndexChanged += new System.EventHandler(this.listRoutine_SelectedIndexChanged);
             // 
@@ -614,7 +626,7 @@
             this.listModule.ItemHeight = 12;
             this.listModule.Location = new System.Drawing.Point(221, 114);
             this.listModule.Name = "listModule";
-            this.listModule.Size = new System.Drawing.Size(202, 136);
+            this.listModule.Size = new System.Drawing.Size(202, 100);
             this.listModule.TabIndex = 38;
             this.listModule.SelectedIndexChanged += new System.EventHandler(this.listModule_SelectedIndexChanged);
             // 
@@ -624,7 +636,7 @@
             this.listTask.ItemHeight = 12;
             this.listTask.Location = new System.Drawing.Point(13, 114);
             this.listTask.Name = "listTask";
-            this.listTask.Size = new System.Drawing.Size(202, 136);
+            this.listTask.Size = new System.Drawing.Size(202, 100);
             this.listTask.TabIndex = 37;
             this.listTask.SelectedIndexChanged += new System.EventHandler(this.listTask_SelectedIndexChanged);
             // 
@@ -640,7 +652,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(921, 500);
+            this.tabPage1.Size = new System.Drawing.Size(921, 451);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "连接机器人";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -673,6 +685,7 @@
             this.IsVirtual,
             this.ControllerName});
             this.listView1.GridLines = true;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(13, 22);
             this.listView1.Name = "listView1";
@@ -922,10 +935,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(929, 526);
+            this.tabControl1.Size = new System.Drawing.Size(929, 477);
             this.tabControl1.TabIndex = 37;
             // 
             // tabPage4
@@ -942,7 +956,7 @@
             this.tabPage4.Controls.Add(this.listTaskOne);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(921, 500);
+            this.tabPage4.Size = new System.Drawing.Size(921, 451);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "读写Rapid代码";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1057,69 +1071,64 @@
             this.tabPage5.Controls.Add(this.startPro);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(921, 500);
+            this.tabPage5.Size = new System.Drawing.Size(921, 451);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "程序运行";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // startPro
+            // label39
             // 
-            this.startPro.Location = new System.Drawing.Point(22, 186);
-            this.startPro.Name = "startPro";
-            this.startPro.Size = new System.Drawing.Size(75, 23);
-            this.startPro.TabIndex = 0;
-            this.startPro.Text = "运行";
-            this.startPro.UseVisualStyleBackColor = true;
-            this.startPro.Click += new System.EventHandler(this.startPro_Click);
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(581, 253);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(59, 12);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "Rapid结构";
             // 
-            // label32
+            // pictureBox1
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(20, 42);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(77, 12);
-            this.label32.TabIndex = 1;
-            this.label32.Text = "请输入任务：";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(572, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(299, 216);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
-            // label33
+            // label38
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(20, 90);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(77, 12);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "请输入模块：";
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(20, 253);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(257, 12);
+            this.label38.TabIndex = 11;
+            this.label38.Text = "备注：模块名、程序名可以在数据读写页面看到";
             // 
-            // label34
+            // label37
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(20, 130);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(77, 12);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "请输入程序：";
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(213, 136);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(173, 12);
+            this.label37.TabIndex = 10;
+            this.label37.Text = " controller.Rapid.Start();  ";
             // 
-            // textBox1
+            // label36
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "T_ROB1";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(213, 90);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(281, 12);
+            this.label36.TabIndex = 9;
+            this.label36.Text = " _task.SetProgramPointer(\"Module\", \"Routine\");";
             // 
-            // moduleName
+            // label35
             // 
-            this.moduleName.Location = new System.Drawing.Point(91, 87);
-            this.moduleName.Name = "moduleName";
-            this.moduleName.Size = new System.Drawing.Size(100, 21);
-            this.moduleName.TabIndex = 5;
-            // 
-            // proName
-            // 
-            this.proName.Location = new System.Drawing.Point(91, 127);
-            this.proName.Name = "proName";
-            this.proName.Size = new System.Drawing.Size(100, 21);
-            this.proName.TabIndex = 6;
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(213, 42);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(239, 12);
+            this.label35.TabIndex = 8;
+            this.label35.Text = "_task = controller.Rapid.GetTasks()[0];";
             // 
             // stopPro
             // 
@@ -1131,65 +1140,175 @@
             this.stopPro.UseVisualStyleBackColor = true;
             this.stopPro.Click += new System.EventHandler(this.stopPro_Click);
             // 
-            // label35
+            // proName
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(213, 42);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(239, 12);
-            this.label35.TabIndex = 8;
-            this.label35.Text = "_task = controller.Rapid.GetTasks()[0];";
+            this.proName.Location = new System.Drawing.Point(91, 127);
+            this.proName.Name = "proName";
+            this.proName.Size = new System.Drawing.Size(100, 21);
+            this.proName.TabIndex = 6;
             // 
-            // label36
+            // moduleName
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(213, 90);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(281, 12);
-            this.label36.TabIndex = 9;
-            this.label36.Text = " _task.SetProgramPointer(\"Module\", \"Routine\");";
+            this.moduleName.Location = new System.Drawing.Point(91, 87);
+            this.moduleName.Name = "moduleName";
+            this.moduleName.Size = new System.Drawing.Size(100, 21);
+            this.moduleName.TabIndex = 5;
+            this.moduleName.Text = "Module1";
             // 
-            // label37
+            // textBox1
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(213, 136);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(173, 12);
-            this.label37.TabIndex = 10;
-            this.label37.Text = " controller.Rapid.Start();  ";
+            this.textBox1.Location = new System.Drawing.Point(91, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Text = "T_ROB1";
             // 
-            // label38
+            // label34
             // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(20, 253);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(257, 12);
-            this.label38.TabIndex = 11;
-            this.label38.Text = "备注：模块名、程序名可以在数据读写页面看到";
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(20, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(77, 12);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "请输入程序：";
             // 
-            // pictureBox1
+            // label33
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(572, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(299, 216);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(20, 90);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(77, 12);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "请输入模块：";
             // 
-            // label39
+            // label32
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(581, 253);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(59, 12);
-            this.label39.TabIndex = 13;
-            this.label39.Text = "Rapid结构";
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(20, 42);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(77, 12);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "请输入任务：";
+            // 
+            // startPro
+            // 
+            this.startPro.Location = new System.Drawing.Point(22, 186);
+            this.startPro.Name = "startPro";
+            this.startPro.Size = new System.Drawing.Size(75, 23);
+            this.startPro.TabIndex = 0;
+            this.startPro.Text = "运行";
+            this.startPro.UseVisualStyleBackColor = true;
+            this.startPro.Click += new System.EventHandler(this.startPro_Click);
+            // 
+            // runStatus
+            // 
+            this.runStatus.Location = new System.Drawing.Point(650, 495);
+            this.runStatus.Multiline = true;
+            this.runStatus.Name = "runStatus";
+            this.runStatus.Size = new System.Drawing.Size(287, 43);
+            this.runStatus.TabIndex = 38;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(585, 498);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(59, 12);
+            this.label40.TabIndex = 39;
+            this.label40.Text = "运行信息;";
+            // 
+            // bugTest
+            // 
+            this.bugTest.Location = new System.Drawing.Point(490, 493);
+            this.bugTest.Name = "bugTest";
+            this.bugTest.Size = new System.Drawing.Size(75, 23);
+            this.bugTest.TabIndex = 40;
+            this.bugTest.Text = "测试";
+            this.bugTest.UseVisualStyleBackColor = true;
+            this.bugTest.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.listBoxIOunit);
+            this.tabPage6.Controls.Add(this.getIOunit);
+            this.tabPage6.Controls.Add(this.getIOsignal);
+            this.tabPage6.Controls.Add(this.listViewIO);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(921, 451);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "I/0信息";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listViewIO
+            // 
+            this.listViewIO.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IOname,
+            this.IOtype,
+            this.IOvalue});
+            this.listViewIO.FullRowSelect = true;
+            this.listViewIO.GridLines = true;
+            this.listViewIO.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewIO.HideSelection = false;
+            this.listViewIO.Location = new System.Drawing.Point(15, 54);
+            this.listViewIO.Name = "listViewIO";
+            this.listViewIO.Size = new System.Drawing.Size(270, 394);
+            this.listViewIO.TabIndex = 0;
+            this.listViewIO.UseCompatibleStateImageBehavior = false;
+            this.listViewIO.View = System.Windows.Forms.View.Details;
+            // 
+            // getIOsignal
+            // 
+            this.getIOsignal.Location = new System.Drawing.Point(15, 25);
+            this.getIOsignal.Name = "getIOsignal";
+            this.getIOsignal.Size = new System.Drawing.Size(102, 23);
+            this.getIOsignal.TabIndex = 41;
+            this.getIOsignal.Text = "获取I/O信号";
+            this.getIOsignal.UseVisualStyleBackColor = true;
+            this.getIOsignal.Click += new System.EventHandler(this.getIOsignal_Click);
+            // 
+            // IOname
+            // 
+            this.IOname.Text = "IO名";
+            this.IOname.Width = 93;
+            // 
+            // IOtype
+            // 
+            this.IOtype.Text = "类型";
+            this.IOtype.Width = 76;
+            // 
+            // IOvalue
+            // 
+            this.IOvalue.Text = "值";
+            this.IOvalue.Width = 93;
+            // 
+            // getIOunit
+            // 
+            this.getIOunit.Location = new System.Drawing.Point(309, 25);
+            this.getIOunit.Name = "getIOunit";
+            this.getIOunit.Size = new System.Drawing.Size(102, 23);
+            this.getIOunit.TabIndex = 43;
+            this.getIOunit.Text = "获取I/O单元";
+            this.getIOunit.UseVisualStyleBackColor = true;
+            this.getIOunit.Click += new System.EventHandler(this.getIOunit_Click);
+            // 
+            // listBoxIOunit
+            // 
+            this.listBoxIOunit.FormattingEnabled = true;
+            this.listBoxIOunit.ItemHeight = 12;
+            this.listBoxIOunit.Location = new System.Drawing.Point(309, 65);
+            this.listBoxIOunit.Name = "listBoxIOunit";
+            this.listBoxIOunit.Size = new System.Drawing.Size(120, 88);
+            this.listBoxIOunit.TabIndex = 44;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 550);
+            this.Controls.Add(this.bugTest);
+            this.Controls.Add(this.label40);
+            this.Controls.Add(this.runStatus);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -1213,7 +1332,9 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1326,6 +1447,17 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox runStatus;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Button bugTest;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button getIOsignal;
+        private System.Windows.Forms.ListView listViewIO;
+        private System.Windows.Forms.ColumnHeader IOname;
+        private System.Windows.Forms.ColumnHeader IOtype;
+        private System.Windows.Forms.ColumnHeader IOvalue;
+        private System.Windows.Forms.ListBox listBoxIOunit;
+        private System.Windows.Forms.Button getIOunit;
     }
 }
 

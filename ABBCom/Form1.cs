@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ABB.Robotics.Controllers;
 using ABB.Robotics.Controllers.Discovery;
 using ABB.Robotics.Controllers.EventLogDomain;
+using ABB.Robotics.Controllers.IOSystemDomain;
 using ABB.Robotics.Controllers.MotionDomain;
 using ABB.Robotics.Controllers.RapidDomain;
 using RobotStudio.Services.RobApi.RobApi1;
@@ -31,6 +32,8 @@ namespace ABBCom
         static int routineint;
 
 
+ 
+
 
 
         public string localFilePath; //rapidcode代码内容保存地址
@@ -38,7 +41,9 @@ namespace ABBCom
         public Form1()
         {
             InitializeComponent();
-        
+
+         
+
 
 
         }
@@ -97,6 +102,7 @@ namespace ABBCom
 
                     }
                 }
+             
             }
 
 
@@ -280,7 +286,7 @@ namespace ABBCom
             listRoutine.Items.Clear();
             int taskint = listTask.SelectedIndex;
             int moduleint = listModule.SelectedIndex;
-        
+
 
             Routine[] routines1 = controller.Rapid.GetTasks()[taskint].GetModules()[moduleint].GetRoutines();
             for (int i = 0; i < (int)routines1.Count(); i++)
@@ -460,16 +466,29 @@ namespace ABBCom
         // 20230611选择程序运行
         private void startPro_Click(object sender, EventArgs e)
         {
-         
 
-              using (Mastership.Request(controller.Rapid))
+            if (controller.OperatingMode == ControllerOperatingMode.Auto)
+            {
+
+                using (Mastership.Request(controller.Rapid))
                 {
-                  
+
                     _task.SetProgramPointer(moduleName.Text, proName.Text);
-                    controller.Rapid.Start();   
-                                                 
+                    controller.Rapid.Start();
+
+                    runStatus.Text = DateTime.Now.ToString() + "程序已经运行。";
+
                 }
-           
+
+                Mastership.Request(controller.Rapid).Release();
+            }
+            else
+            {
+
+                runStatus.Text = DateTime.Now.ToString() + "机器人没有处于自动模式!";
+            }
+
+
 
         }
         //20230613结束程序运行
@@ -486,7 +505,7 @@ namespace ABBCom
         //20230611 获取任务列表
         private void getTaskOne_Click(object sender, EventArgs e)
         {
-             listTaskOne.Items.Clear();
+            listTaskOne.Items.Clear();
 
             for (int i = 0; i < (int)controller.Rapid.GetTasks().Count(); i++)
             {
@@ -497,7 +516,7 @@ namespace ABBCom
         //20230611获取选中任务的模块
         private void listTaskOne_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int a= listTaskOne.SelectedIndex;
+            int a = listTaskOne.SelectedIndex;
             Module[] modules = controller.Rapid.GetTasks()[a].GetModules();
             listModuleOne.Items.Clear();
             for (int i = 0; i < (int)modules.Count(); i++)
@@ -518,7 +537,7 @@ namespace ABBCom
         private void readModule_Click(object sender, EventArgs e)
         {
             rapidCodeValue.Clear();
-           
+
             ABB.Robotics.Controllers.RapidDomain.Module m1 = _task.GetModule(selectedModule.Text);
             //根据currModuleName获取该模块
             string remotePath = controller.FileSystem.RemoteDirectory + "/pctmp";
@@ -550,11 +569,11 @@ namespace ABBCom
 
             string rootpath = Application.StartupPath.Substring(0, Application.StartupPath.LastIndexOf("\\"));
             //获取C#项目路径
-           localFilePath = rootpath + "\\Debug\\" + selectedModule.Text + ".mod";
+            localFilePath = rootpath + "\\Debug\\" + selectedModule.Text + ".mod";
             //存储本地module文件的路径，后续修改rapid时，先将修改后的文件存储到该路径，并从该路径传输到机器人控制器并加载到RAPID
             string text = System.IO.File.ReadAllText(localFilePath);
             //读取存储到本地的模块文件
-            rapidCodeValue.Text= text;
+            rapidCodeValue.Text = text;
             //将模块文件内容显示到textBox4中
         }
 
@@ -587,7 +606,41 @@ namespace ABBCom
         }
 
 
+        //20230614 调试测试
+        private void button1_Click(object sender, EventArgs e)
+        {
+          
+        
 
-       
+        }
+
+        //20230614 获取IO信号列表
+        private void getIOsignal_Click(object sender, EventArgs e)
+        {
+            var ios = controller.IOSystem.GetSignals(IOFilterTypes.All);
+
+            foreach (Signal io in ios)
+            {
+              
+                ListViewItem item = new ListViewItem(io.Name);
+                item.SubItems.Add(io.Type.ToString());
+                item.SubItems.Add(io.Value.ToString());
+                this.listViewIO.Items.Add(item);
+             
+            }
+
+        }
+        //20230614 获取IO单元
+        private void getIOunit_Click(object sender, EventArgs e)
+        {
+            var Units = controller.IOSystem.GetUnits();
+            foreach (Unit unit in Units)
+            {    //显示扫描到的IO板
+             
+                listBoxIOunit.Items.Add("IOBoard:" + unit.Name);
+            }
+        }
     }
 }
+    
+       
