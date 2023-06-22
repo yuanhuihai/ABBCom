@@ -138,17 +138,20 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.startPro = new System.Windows.Forms.Button();
-            this.runStatus = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.bugTest = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.listViewIO = new System.Windows.Forms.ListView();
+            this.listBoxIOunit = new System.Windows.Forms.ListBox();
+            this.getIOunit = new System.Windows.Forms.Button();
             this.getIOsignal = new System.Windows.Forms.Button();
+            this.listViewIO = new System.Windows.Forms.ListView();
             this.IOname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IOtype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IOvalue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.getIOunit = new System.Windows.Forms.Button();
-            this.listBoxIOunit = new System.Windows.Forms.ListBox();
+            this.runStatus = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.bugTest = new System.Windows.Forms.Button();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.richOption = new System.Windows.Forms.RichTextBox();
+            this.robotOption = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBo4.SuspendLayout();
@@ -161,6 +164,7 @@
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -936,6 +940,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1200,6 +1205,80 @@
             this.startPro.UseVisualStyleBackColor = true;
             this.startPro.Click += new System.EventHandler(this.startPro_Click);
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.listBoxIOunit);
+            this.tabPage6.Controls.Add(this.getIOunit);
+            this.tabPage6.Controls.Add(this.getIOsignal);
+            this.tabPage6.Controls.Add(this.listViewIO);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(921, 451);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "I/0信息";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // listBoxIOunit
+            // 
+            this.listBoxIOunit.FormattingEnabled = true;
+            this.listBoxIOunit.ItemHeight = 12;
+            this.listBoxIOunit.Location = new System.Drawing.Point(309, 65);
+            this.listBoxIOunit.Name = "listBoxIOunit";
+            this.listBoxIOunit.Size = new System.Drawing.Size(120, 88);
+            this.listBoxIOunit.TabIndex = 44;
+            // 
+            // getIOunit
+            // 
+            this.getIOunit.Location = new System.Drawing.Point(309, 25);
+            this.getIOunit.Name = "getIOunit";
+            this.getIOunit.Size = new System.Drawing.Size(102, 23);
+            this.getIOunit.TabIndex = 43;
+            this.getIOunit.Text = "获取I/O单元";
+            this.getIOunit.UseVisualStyleBackColor = true;
+            this.getIOunit.Click += new System.EventHandler(this.getIOunit_Click);
+            // 
+            // getIOsignal
+            // 
+            this.getIOsignal.Location = new System.Drawing.Point(15, 25);
+            this.getIOsignal.Name = "getIOsignal";
+            this.getIOsignal.Size = new System.Drawing.Size(102, 23);
+            this.getIOsignal.TabIndex = 41;
+            this.getIOsignal.Text = "获取I/O信号";
+            this.getIOsignal.UseVisualStyleBackColor = true;
+            this.getIOsignal.Click += new System.EventHandler(this.getIOsignal_Click);
+            // 
+            // listViewIO
+            // 
+            this.listViewIO.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IOname,
+            this.IOtype,
+            this.IOvalue});
+            this.listViewIO.FullRowSelect = true;
+            this.listViewIO.GridLines = true;
+            this.listViewIO.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewIO.HideSelection = false;
+            this.listViewIO.Location = new System.Drawing.Point(15, 54);
+            this.listViewIO.Name = "listViewIO";
+            this.listViewIO.Size = new System.Drawing.Size(270, 394);
+            this.listViewIO.TabIndex = 0;
+            this.listViewIO.UseCompatibleStateImageBehavior = false;
+            this.listViewIO.View = System.Windows.Forms.View.Details;
+            // 
+            // IOname
+            // 
+            this.IOname.Text = "IO名";
+            this.IOname.Width = 93;
+            // 
+            // IOtype
+            // 
+            this.IOtype.Text = "类型";
+            this.IOtype.Width = 76;
+            // 
+            // IOvalue
+            // 
+            this.IOvalue.Text = "值";
+            this.IOvalue.Width = 93;
+            // 
             // runStatus
             // 
             this.runStatus.Location = new System.Drawing.Point(650, 495);
@@ -1227,79 +1306,34 @@
             this.bugTest.UseVisualStyleBackColor = true;
             this.bugTest.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tabPage6
+            // tabPage7
             // 
-            this.tabPage6.Controls.Add(this.listBoxIOunit);
-            this.tabPage6.Controls.Add(this.getIOunit);
-            this.tabPage6.Controls.Add(this.getIOsignal);
-            this.tabPage6.Controls.Add(this.listViewIO);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(921, 451);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "I/0信息";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage7.Controls.Add(this.robotOption);
+            this.tabPage7.Controls.Add(this.richOption);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(921, 451);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "机器人选项";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // listViewIO
+            // richOption
             // 
-            this.listViewIO.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.IOname,
-            this.IOtype,
-            this.IOvalue});
-            this.listViewIO.FullRowSelect = true;
-            this.listViewIO.GridLines = true;
-            this.listViewIO.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewIO.HideSelection = false;
-            this.listViewIO.Location = new System.Drawing.Point(15, 54);
-            this.listViewIO.Name = "listViewIO";
-            this.listViewIO.Size = new System.Drawing.Size(270, 394);
-            this.listViewIO.TabIndex = 0;
-            this.listViewIO.UseCompatibleStateImageBehavior = false;
-            this.listViewIO.View = System.Windows.Forms.View.Details;
+            this.richOption.Location = new System.Drawing.Point(18, 49);
+            this.richOption.Name = "richOption";
+            this.richOption.Size = new System.Drawing.Size(335, 399);
+            this.richOption.TabIndex = 0;
+            this.richOption.Text = "";
             // 
-            // getIOsignal
+            // robotOption
             // 
-            this.getIOsignal.Location = new System.Drawing.Point(15, 25);
-            this.getIOsignal.Name = "getIOsignal";
-            this.getIOsignal.Size = new System.Drawing.Size(102, 23);
-            this.getIOsignal.TabIndex = 41;
-            this.getIOsignal.Text = "获取I/O信号";
-            this.getIOsignal.UseVisualStyleBackColor = true;
-            this.getIOsignal.Click += new System.EventHandler(this.getIOsignal_Click);
-            // 
-            // IOname
-            // 
-            this.IOname.Text = "IO名";
-            this.IOname.Width = 93;
-            // 
-            // IOtype
-            // 
-            this.IOtype.Text = "类型";
-            this.IOtype.Width = 76;
-            // 
-            // IOvalue
-            // 
-            this.IOvalue.Text = "值";
-            this.IOvalue.Width = 93;
-            // 
-            // getIOunit
-            // 
-            this.getIOunit.Location = new System.Drawing.Point(309, 25);
-            this.getIOunit.Name = "getIOunit";
-            this.getIOunit.Size = new System.Drawing.Size(102, 23);
-            this.getIOunit.TabIndex = 43;
-            this.getIOunit.Text = "获取I/O单元";
-            this.getIOunit.UseVisualStyleBackColor = true;
-            this.getIOunit.Click += new System.EventHandler(this.getIOunit_Click);
-            // 
-            // listBoxIOunit
-            // 
-            this.listBoxIOunit.FormattingEnabled = true;
-            this.listBoxIOunit.ItemHeight = 12;
-            this.listBoxIOunit.Location = new System.Drawing.Point(309, 65);
-            this.listBoxIOunit.Name = "listBoxIOunit";
-            this.listBoxIOunit.Size = new System.Drawing.Size(120, 88);
-            this.listBoxIOunit.TabIndex = 44;
+            this.robotOption.Location = new System.Drawing.Point(18, 20);
+            this.robotOption.Name = "robotOption";
+            this.robotOption.Size = new System.Drawing.Size(75, 23);
+            this.robotOption.TabIndex = 1;
+            this.robotOption.Text = "机器人选项";
+            this.robotOption.UseVisualStyleBackColor = true;
+            this.robotOption.Click += new System.EventHandler(this.robotOption_Click);
             // 
             // Form1
             // 
@@ -1333,6 +1367,7 @@
             this.tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1458,6 +1493,9 @@
         private System.Windows.Forms.ColumnHeader IOvalue;
         private System.Windows.Forms.ListBox listBoxIOunit;
         private System.Windows.Forms.Button getIOunit;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button robotOption;
+        private System.Windows.Forms.RichTextBox richOption;
     }
 }
 

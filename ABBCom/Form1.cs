@@ -31,8 +31,9 @@ namespace ABBCom
         static int moduleint;
         static int routineint;
 
+        RapidData rd;
 
- 
+
 
 
 
@@ -478,6 +479,8 @@ namespace ABBCom
 
                     runStatus.Text = DateTime.Now.ToString() + "程序已经运行。";
 
+                    startPro.Enabled = false;
+
                 }
 
                 Mastership.Request(controller.Rapid).Release();
@@ -498,6 +501,7 @@ namespace ABBCom
             {
 
                 controller.Rapid.Stop(StopMode.Immediate);
+                startPro.Enabled = true;
             }
         }
 
@@ -638,6 +642,16 @@ namespace ABBCom
             {    //显示扫描到的IO板
              
                 listBoxIOunit.Items.Add("IOBoard:" + unit.Name);
+            }
+        }
+
+        //20230622 获取机器人选项信息
+        private void robotOption_Click(object sender, EventArgs e)
+        {
+            RobotWareOptionCollection options = controller.RobotWare.Options;
+            foreach(RobotWareOption option in options)
+            {
+                richOption.Text += "option:" + option.ToString() + "\r\n";
             }
         }
     }
