@@ -102,7 +102,11 @@ namespace ABBCom
                         _task = controller.Rapid.GetTasks()[0];
 
                     }
+
+                    timer2.Start();
                 }
+
+            
              
             }
 
@@ -164,6 +168,48 @@ namespace ABBCom
         }
 
 
+        //每5s钟获取一次机器人状态 20230623
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            updateStatus();
+        }
+
+
+        //每5s钟获取机器人方法20230623
+
+            public void updateStatus()
+        {
+            ControllerState con_states = new ControllerState();
+            con_states = controller.State;
+            ControllerOperatingMode op_mode = new ControllerOperatingMode();
+            op_mode = controller.OperatingMode;
+            string T1 = "";
+            string T2 = "";
+            if (con_states.Equals(ControllerState.EmergencyStop)) T1 = "急停";
+            else if (con_states.Equals(ControllerState.EmergencyStopReset)) T1 = "急停复位";
+            else if (con_states.Equals(ControllerState.GuardStop)) T1 = "安全停止";
+            else if (con_states.Equals(ControllerState.Init)) T1 = "初始化";
+            else if (con_states.Equals(ControllerState.MotorsOff)) T1 = "电机关闭";
+            else if (con_states.Equals(ControllerState.MotorsOn)) T1 = "电机启动";
+            else if (con_states.Equals(ControllerState.SystemFailure)) T1 = "系统失效";
+            else if (con_states.Equals(ControllerState.Unknown)) T1 = "未知";
+            else T1 = "严重错误";
+            if (op_mode.Equals(ControllerOperatingMode.Auto)) T2 = "自动";
+            else if (op_mode.Equals(ControllerOperatingMode.AutoChange)) T2 = "自动改";
+            else if (op_mode.Equals(ControllerOperatingMode.Init)) T2 = "初始化";
+            else if (op_mode.Equals(ControllerOperatingMode.ManualFullSpeed)) T2 = "手动全速";
+            else if (op_mode.Equals(ControllerOperatingMode.ManualFullSpeedChange)) T2 = "手动全速改";
+            else if (op_mode.Equals(ControllerOperatingMode.ManualReducedSpeed)) T2 = "手动减速";
+            else if (op_mode.Equals(ControllerOperatingMode.NotApplicable)) T2 = "不适用";
+            else T2 = "严重错误";
+
+            opMode.Text = "操作模式：" + T2;
+            controlStatus.Text = "控制状态：" + T1;
+            opMode.ForeColor = Color.Blue;
+            controlStatus.ForeColor = Color.Blue;
+
+        }
+
         //获取机器人当前状态 20230520
 
         private void getStatus_Click(object sender, EventArgs e)
@@ -196,10 +242,10 @@ namespace ABBCom
             statusOne.Text = T1;
             statusTwo.Text = T2;
 
+
+
+
         }
-
-
-
 
 
         //电机开启 20230520
@@ -250,6 +296,9 @@ namespace ABBCom
                 MessageBox.Show("发生意外" + ex.Message);
             }
         }
+
+
+      
 
         // 获取任务列表 20230609
 
@@ -649,11 +698,26 @@ namespace ABBCom
         private void robotOption_Click(object sender, EventArgs e)
         {
             RobotWareOptionCollection options = controller.RobotWare.Options;
+
+            richOption.Text += "系统名:" + controller.RobotWare.Name.ToString() + "\r\n";
+            richOption.Text += "RW版本:" + controller.RobotWare.Version.ToString() + "\r\n";
             foreach(RobotWareOption option in options)
             {
                 richOption.Text += "option:" + option.ToString() + "\r\n";
             }
         }
+
+        //20230622 机器人运行时间
+        private void runTime_Click(object sender, EventArgs e)
+        {
+            MechanicalUnitServiceInfo unitServcieInfo = controller.MotionSystem.ActiveMechanicalUnit.ServiceInfo;
+            richRunTime.Text += "生产总时间:" + unitServcieInfo.ElapsedProductionTime.TotalHours.ToString() + "小时\r\n";
+            richRunTime.Text += "自上次服务后的生产总时间:" + unitServcieInfo.ElapsedProductionTimeSinceLastService.TotalHours.ToString() + "小时\r\n";
+            richRunTime.Text += "上次开机时间:" + unitServcieInfo.LastStart.ToString() + "小时\r\n";
+            richRunTime.Text += "自上次检修后的校准时间:" + unitServcieInfo.ElapsedProductionTimeSinceLastService.TotalHours.ToString() + "小时\r\n";
+        }
+
+       
     }
 }
     

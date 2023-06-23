@@ -81,6 +81,9 @@
             this.listModule = new System.Windows.Forms.ListBox();
             this.listTask = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.motorOn = new System.Windows.Forms.Button();
+            this.motorOff = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.scanRobot = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -109,8 +112,6 @@
             this.statusTwo = new System.Windows.Forms.TextBox();
             this.statusOne = new System.Windows.Forms.TextBox();
             this.getStatus = new System.Windows.Forms.Button();
-            this.motorOn = new System.Windows.Forms.Button();
-            this.motorOff = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.writeModule = new System.Windows.Forms.Button();
@@ -146,17 +147,24 @@
             this.IOname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IOtype = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IOvalue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.runTime = new System.Windows.Forms.Button();
+            this.richRunTime = new System.Windows.Forms.RichTextBox();
+            this.robotOption = new System.Windows.Forms.Button();
+            this.richOption = new System.Windows.Forms.RichTextBox();
             this.runStatus = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.bugTest = new System.Windows.Forms.Button();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.richOption = new System.Windows.Forms.RichTextBox();
-            this.robotOption = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.opMode = new System.Windows.Forms.ToolStripStatusLabel();
+            this.controlStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBo4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -165,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -179,7 +188,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(921, 451);
+            this.tabPage3.Size = new System.Drawing.Size(917, 434);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "日志";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -225,7 +234,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(921, 451);
+            this.tabPage2.Size = new System.Drawing.Size(917, 434);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "数据读写";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -442,7 +451,7 @@
             this.groupBox2.Controls.Add(this.showY);
             this.groupBox2.Location = new System.Drawing.Point(13, 222);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 220);
+            this.groupBox2.Size = new System.Drawing.Size(293, 209);
             this.groupBox2.TabIndex = 63;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "robTarget信息";
@@ -457,7 +466,7 @@
             // 
             // showX
             // 
-            this.showX.Location = new System.Drawing.Point(208, 23);
+            this.showX.Location = new System.Drawing.Point(208, 15);
             this.showX.Name = "showX";
             this.showX.Size = new System.Drawing.Size(79, 21);
             this.showX.TabIndex = 47;
@@ -465,7 +474,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(185, 27);
+            this.label10.Location = new System.Drawing.Point(185, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 12);
             this.label10.TabIndex = 45;
@@ -474,7 +483,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(185, 55);
+            this.label11.Location = new System.Drawing.Point(185, 47);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(11, 12);
             this.label11.TabIndex = 46;
@@ -482,7 +491,7 @@
             // 
             // showQfour
             // 
-            this.showQfour.Location = new System.Drawing.Point(208, 187);
+            this.showQfour.Location = new System.Drawing.Point(208, 179);
             this.showQfour.Name = "showQfour";
             this.showQfour.Size = new System.Drawing.Size(79, 21);
             this.showQfour.TabIndex = 59;
@@ -490,7 +499,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(185, 82);
+            this.label13.Location = new System.Drawing.Point(185, 74);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(11, 12);
             this.label13.TabIndex = 49;
@@ -498,7 +507,7 @@
             // 
             // showQthree
             // 
-            this.showQthree.Location = new System.Drawing.Point(208, 161);
+            this.showQthree.Location = new System.Drawing.Point(208, 153);
             this.showQthree.Name = "showQthree";
             this.showQthree.Size = new System.Drawing.Size(79, 21);
             this.showQthree.TabIndex = 58;
@@ -506,7 +515,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(185, 108);
+            this.label16.Location = new System.Drawing.Point(185, 100);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(17, 12);
             this.label16.TabIndex = 50;
@@ -514,7 +523,7 @@
             // 
             // showQtwo
             // 
-            this.showQtwo.Location = new System.Drawing.Point(208, 133);
+            this.showQtwo.Location = new System.Drawing.Point(208, 125);
             this.showQtwo.Name = "showQtwo";
             this.showQtwo.Size = new System.Drawing.Size(79, 21);
             this.showQtwo.TabIndex = 57;
@@ -522,7 +531,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(185, 138);
+            this.label15.Location = new System.Drawing.Point(185, 130);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 12);
             this.label15.TabIndex = 51;
@@ -530,7 +539,7 @@
             // 
             // showQone
             // 
-            this.showQone.Location = new System.Drawing.Point(208, 104);
+            this.showQone.Location = new System.Drawing.Point(208, 96);
             this.showQone.Name = "showQone";
             this.showQone.Size = new System.Drawing.Size(79, 21);
             this.showQone.TabIndex = 56;
@@ -538,7 +547,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(185, 166);
+            this.label14.Location = new System.Drawing.Point(185, 158);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 12);
             this.label14.TabIndex = 52;
@@ -546,7 +555,7 @@
             // 
             // showZ
             // 
-            this.showZ.Location = new System.Drawing.Point(208, 77);
+            this.showZ.Location = new System.Drawing.Point(208, 69);
             this.showZ.Name = "showZ";
             this.showZ.Size = new System.Drawing.Size(79, 21);
             this.showZ.TabIndex = 55;
@@ -554,7 +563,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(185, 191);
+            this.label17.Location = new System.Drawing.Point(185, 183);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(17, 12);
             this.label17.TabIndex = 53;
@@ -562,7 +571,7 @@
             // 
             // showY
             // 
-            this.showY.Location = new System.Drawing.Point(208, 50);
+            this.showY.Location = new System.Drawing.Point(208, 42);
             this.showY.Name = "showY";
             this.showY.Size = new System.Drawing.Size(79, 21);
             this.showY.TabIndex = 54;
@@ -646,20 +655,50 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.scanRobot);
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.motorOn);
-            this.tabPage1.Controls.Add(this.motorOff);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(921, 451);
+            this.tabPage1.Size = new System.Drawing.Size(917, 434);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "连接机器人";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.motorOn);
+            this.groupBox4.Controls.Add(this.motorOff);
+            this.groupBox4.Location = new System.Drawing.Point(360, 221);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(515, 100);
+            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "控制";
+            // 
+            // motorOn
+            // 
+            this.motorOn.Location = new System.Drawing.Point(6, 20);
+            this.motorOn.Name = "motorOn";
+            this.motorOn.Size = new System.Drawing.Size(75, 23);
+            this.motorOn.TabIndex = 25;
+            this.motorOn.Text = "电机开启";
+            this.motorOn.UseVisualStyleBackColor = true;
+            this.motorOn.Click += new System.EventHandler(this.motorOn_Click);
+            // 
+            // motorOff
+            // 
+            this.motorOff.Location = new System.Drawing.Point(87, 20);
+            this.motorOff.Name = "motorOff";
+            this.motorOff.Size = new System.Drawing.Size(75, 23);
+            this.motorOff.TabIndex = 26;
+            this.motorOff.Text = "电机关闭";
+            this.motorOff.UseVisualStyleBackColor = true;
+            this.motorOff.Click += new System.EventHandler(this.motorOff_Click);
             // 
             // label8
             // 
@@ -912,26 +951,6 @@
             this.getStatus.UseVisualStyleBackColor = true;
             this.getStatus.Click += new System.EventHandler(this.getStatus_Click);
             // 
-            // motorOn
-            // 
-            this.motorOn.Location = new System.Drawing.Point(360, 230);
-            this.motorOn.Name = "motorOn";
-            this.motorOn.Size = new System.Drawing.Size(75, 23);
-            this.motorOn.TabIndex = 25;
-            this.motorOn.Text = "电机开启";
-            this.motorOn.UseVisualStyleBackColor = true;
-            this.motorOn.Click += new System.EventHandler(this.motorOn_Click);
-            // 
-            // motorOff
-            // 
-            this.motorOff.Location = new System.Drawing.Point(441, 230);
-            this.motorOff.Name = "motorOff";
-            this.motorOff.Size = new System.Drawing.Size(75, 23);
-            this.motorOff.TabIndex = 26;
-            this.motorOff.Text = "电机关闭";
-            this.motorOff.UseVisualStyleBackColor = true;
-            this.motorOff.Click += new System.EventHandler(this.motorOff_Click);
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -944,7 +963,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(929, 477);
+            this.tabControl1.Size = new System.Drawing.Size(925, 460);
             this.tabControl1.TabIndex = 37;
             // 
             // tabPage4
@@ -961,7 +980,7 @@
             this.tabPage4.Controls.Add(this.listTaskOne);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(921, 451);
+            this.tabPage4.Size = new System.Drawing.Size(917, 434);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "读写Rapid代码";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1076,7 +1095,7 @@
             this.tabPage5.Controls.Add(this.startPro);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(921, 451);
+            this.tabPage5.Size = new System.Drawing.Size(917, 434);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "程序运行";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1213,7 +1232,7 @@
             this.tabPage6.Controls.Add(this.listViewIO);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(921, 451);
+            this.tabPage6.Size = new System.Drawing.Size(917, 434);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "I/0信息";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1279,51 +1298,36 @@
             this.IOvalue.Text = "值";
             this.IOvalue.Width = 93;
             // 
-            // runStatus
-            // 
-            this.runStatus.Location = new System.Drawing.Point(650, 495);
-            this.runStatus.Multiline = true;
-            this.runStatus.Name = "runStatus";
-            this.runStatus.Size = new System.Drawing.Size(287, 43);
-            this.runStatus.TabIndex = 38;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(585, 498);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(59, 12);
-            this.label40.TabIndex = 39;
-            this.label40.Text = "运行信息;";
-            // 
-            // bugTest
-            // 
-            this.bugTest.Location = new System.Drawing.Point(490, 493);
-            this.bugTest.Name = "bugTest";
-            this.bugTest.Size = new System.Drawing.Size(75, 23);
-            this.bugTest.TabIndex = 40;
-            this.bugTest.Text = "测试";
-            this.bugTest.UseVisualStyleBackColor = true;
-            this.bugTest.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.runTime);
+            this.tabPage7.Controls.Add(this.richRunTime);
             this.tabPage7.Controls.Add(this.robotOption);
             this.tabPage7.Controls.Add(this.richOption);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(921, 451);
+            this.tabPage7.Size = new System.Drawing.Size(917, 434);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "机器人选项";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // richOption
+            // runTime
             // 
-            this.richOption.Location = new System.Drawing.Point(18, 49);
-            this.richOption.Name = "richOption";
-            this.richOption.Size = new System.Drawing.Size(335, 399);
-            this.richOption.TabIndex = 0;
-            this.richOption.Text = "";
+            this.runTime.Location = new System.Drawing.Point(396, 20);
+            this.runTime.Name = "runTime";
+            this.runTime.Size = new System.Drawing.Size(75, 23);
+            this.runTime.TabIndex = 3;
+            this.runTime.Text = "运行时间";
+            this.runTime.UseVisualStyleBackColor = true;
+            this.runTime.Click += new System.EventHandler(this.runTime_Click);
+            // 
+            // richRunTime
+            // 
+            this.richRunTime.Location = new System.Drawing.Point(396, 49);
+            this.richRunTime.Name = "richRunTime";
+            this.richRunTime.Size = new System.Drawing.Size(335, 173);
+            this.richRunTime.TabIndex = 2;
+            this.richRunTime.Text = "";
             // 
             // robotOption
             // 
@@ -1335,11 +1339,75 @@
             this.robotOption.UseVisualStyleBackColor = true;
             this.robotOption.Click += new System.EventHandler(this.robotOption_Click);
             // 
+            // richOption
+            // 
+            this.richOption.Location = new System.Drawing.Point(18, 49);
+            this.richOption.Name = "richOption";
+            this.richOption.Size = new System.Drawing.Size(335, 382);
+            this.richOption.TabIndex = 0;
+            this.richOption.Text = "";
+            // 
+            // runStatus
+            // 
+            this.runStatus.Location = new System.Drawing.Point(652, 474);
+            this.runStatus.Multiline = true;
+            this.runStatus.Name = "runStatus";
+            this.runStatus.Size = new System.Drawing.Size(281, 47);
+            this.runStatus.TabIndex = 38;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(587, 493);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(59, 12);
+            this.label40.TabIndex = 39;
+            this.label40.Text = "运行信息;";
+            // 
+            // bugTest
+            // 
+            this.bugTest.Location = new System.Drawing.Point(492, 488);
+            this.bugTest.Name = "bugTest";
+            this.bugTest.Size = new System.Drawing.Size(75, 23);
+            this.bugTest.TabIndex = 40;
+            this.bugTest.Text = "测试";
+            this.bugTest.UseVisualStyleBackColor = true;
+            this.bugTest.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opMode,
+            this.controlStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 528);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(986, 22);
+            this.statusStrip1.TabIndex = 41;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // opMode
+            // 
+            this.opMode.Name = "opMode";
+            this.opMode.Size = new System.Drawing.Size(56, 17);
+            this.opMode.Text = "操作模式";
+            // 
+            // controlStatus
+            // 
+            this.controlStatus.Name = "controlStatus";
+            this.controlStatus.Size = new System.Drawing.Size(56, 17);
+            this.controlStatus.Text = "控制状态";
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 5000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 550);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.bugTest);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.runStatus);
@@ -1356,6 +1424,7 @@
             this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1368,6 +1437,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1496,6 +1567,13 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Button robotOption;
         private System.Windows.Forms.RichTextBox richOption;
+        private System.Windows.Forms.Button runTime;
+        private System.Windows.Forms.RichTextBox richRunTime;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel opMode;
+        private System.Windows.Forms.ToolStripStatusLabel controlStatus;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
