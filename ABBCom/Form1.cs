@@ -670,7 +670,9 @@ namespace ABBCom
         //20230614 获取IO信号列表
         private void getIOsignal_Click(object sender, EventArgs e)
         {
+            listViewIO.Items.Clear();
             var ios = controller.IOSystem.GetSignals(IOFilterTypes.All);
+
 
             foreach (Signal io in ios)
             {
@@ -717,7 +719,75 @@ namespace ABBCom
             richRunTime.Text += "自上次检修后的校准时间:" + unitServcieInfo.ElapsedProductionTimeSinceLastService.TotalHours.ToString() + "小时\r\n";
         }
 
-       
+        //20230629 正向移动
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                string Axis = "Axis1";
+                string angel = "3";
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+        }
+
+        //20230629 负向移动
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //20230629 正向移动方法
+        public void movePostive()
+        {
+            DigitalSignal digitalSignal = (DigitalSignal)controller.IOSystem.GetSignal("do_plus");
+            if (digitalSignal.Value == 0)
+            {
+                digitalSignal.Set();
+            }
+            else
+            {
+                digitalSignal.Reset();
+            }
+        }
+
+        //20230629  负向移动方法
+        public void moveNegitive()
+        {
+            DigitalSignal digitalSignal = (DigitalSignal)controller.IOSystem.GetSignal("do_minus");
+            if (digitalSignal.Value == 0)
+            {
+                digitalSignal.Set();
+            }
+            else
+            {
+                digitalSignal.Reset();
+            }
+        }
+
+        //20230629 轴运动
+        // MoveType :Movejoint
+
+        public void axisMovePositive(string axis,string angel,string moveType)
+        {
+            using (Mastership.Request(controller.Rapid))
+            {
+                RapidData oneValue = controller.Rapid.GetRapidData("T_ROB1", "SmartControl", axis);
+                Bool onevalue = (Bool)oneValue.Value;
+                onevalue.Fill2("true");
+                oneValue.Value = onevalue;
+
+                RapidData RmoveJoint = controller.Rapid.GetRapidData("T_ROB1", "SmartControl", moveType);
+                Num movejoint = (Num)RmoveJoint.Value;
+                movejoint.Fill2(angel);
+                RmoveJoint.Value = movejoint;
+
+            }
+        }
+
     }
 }
     
