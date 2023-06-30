@@ -725,7 +725,106 @@ namespace ABBCom
             if (radioButton3.Checked)
             {
                 string Axis = "Axis1";
-                string angel = "3";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+       
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+
+            }
+            else if(radioButton4.Checked){
+                string Axis = "Axis2";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton5.Checked)
+            {
+                string Axis = "Axis3";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton6.Checked)
+            {
+                string Axis = "Axis4";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton7.Checked)
+            {
+                string Axis = "Axis5";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton8.Checked)
+            {
+                string Axis = "Axis6";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton9.Checked)
+            {
+                string Axis = "XAxis";
+                string angel = moveValue.Text;
+                string movetype = "Movedistance";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton10.Checked)
+            {
+                string Axis = "YAxis";
+                string angel = moveValue.Text;
+                string movetype = "Movedistance";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton11.Checked)
+            {
+                string Axis = "ZAxis";
+                string angel = moveValue.Text;
+                string movetype = "Movedistance";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton12.Checked)
+            {
+                string Axis = "MoveRotX";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton13.Checked)
+            {
+                string Axis = "MoveRotY";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                movePostive();
+            }
+            else if (radioButton14.Checked)
+            {
+                string Axis = "MoveRotZ";
+                string angel = moveValue.Text;
                 string movetype = "Movejoint";
 
                 axisMovePositive(Axis, angel, movetype);
@@ -736,7 +835,115 @@ namespace ABBCom
         //20230629 负向移动
         private void btnMinus_Click(object sender, EventArgs e)
         {
+            if (radioButton3.Checked)
+            {
+                string Axis = "Axis1";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
 
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+
+            }
+            else if (radioButton4.Checked)
+            {
+                string Axis = "Axis2";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton5.Checked)
+            {
+                string Axis = "Axis3";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton6.Checked)
+            {
+                string Axis = "Axis4";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton7.Checked)
+            {
+                string Axis = "Axis5";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton8.Checked)
+            {
+                string Axis = "Axis6";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton9.Checked)
+            {
+                string Axis = "XAxis";
+                string angel = moveValue.Text;
+                string movetype = "Movedistance";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton10.Checked)
+            {
+                string Axis = "YAxis";
+                string angel = moveValue.Text;
+                string movetype = "Movedistance";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton11.Checked)
+            {
+                string Axis = "ZAxis";
+                string angel = moveValue.Text;
+                string movetype = "Movedistance";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton12.Checked)
+            {
+                string Axis = "MoveRotX";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton13.Checked)
+            {
+                string Axis = "MoveRotY";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
+            else if (radioButton14.Checked)
+            {
+                string Axis = "MoveRotZ";
+                string angel = moveValue.Text;
+                string movetype = "Movejoint";
+
+                axisMovePositive(Axis, angel, movetype);
+                moveNegitive();
+            }
         }
 
 
@@ -785,9 +992,9 @@ namespace ABBCom
                 movejoint.Fill2(angel);
                 RmoveJoint.Value = movejoint;
 
+                
             }
         }
-
     }
 }
     

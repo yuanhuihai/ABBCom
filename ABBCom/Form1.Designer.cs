@@ -152,6 +152,19 @@
             this.richRunTime = new System.Windows.Forms.RichTextBox();
             this.robotOption = new System.Windows.Forms.Button();
             this.richOption = new System.Windows.Forms.RichTextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnMinus = new System.Windows.Forms.Button();
+            this.btnPlus = new System.Windows.Forms.Button();
+            this.label42 = new System.Windows.Forms.Label();
+            this.moveValue = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.radioButton8 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.runStatus = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.bugTest = new System.Windows.Forms.Button();
@@ -159,19 +172,17 @@
             this.opMode = new System.Windows.Forms.ToolStripStatusLabel();
             this.controlStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.moveJogAngel = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.btnPlus = new System.Windows.Forms.Button();
-            this.btnMinus = new System.Windows.Forms.Button();
+            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBo4.SuspendLayout();
@@ -186,9 +197,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -1363,6 +1376,146 @@
             this.richOption.TabIndex = 0;
             this.richOption.Text = "";
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.groupBox9);
+            this.tabPage8.Controls.Add(this.groupBox8);
+            this.tabPage8.Controls.Add(this.groupBox5);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(917, 434);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Jog运动";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.radioButton13);
+            this.groupBox5.Controls.Add(this.radioButton10);
+            this.groupBox5.Controls.Add(this.radioButton14);
+            this.groupBox5.Controls.Add(this.radioButton8);
+            this.groupBox5.Controls.Add(this.radioButton12);
+            this.groupBox5.Controls.Add(this.radioButton11);
+            this.groupBox5.Controls.Add(this.radioButton3);
+            this.groupBox5.Controls.Add(this.radioButton9);
+            this.groupBox5.Controls.Add(this.radioButton7);
+            this.groupBox5.Controls.Add(this.radioButton4);
+            this.groupBox5.Controls.Add(this.radioButton6);
+            this.groupBox5.Controls.Add(this.radioButton5);
+            this.groupBox5.Location = new System.Drawing.Point(17, 30);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(115, 350);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Jog-轴运动";
+            // 
+            // btnMinus
+            // 
+            this.btnMinus.Location = new System.Drawing.Point(238, 20);
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.Size = new System.Drawing.Size(46, 23);
+            this.btnMinus.TabIndex = 10;
+            this.btnMinus.Text = "-";
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            // 
+            // btnPlus
+            // 
+            this.btnPlus.Location = new System.Drawing.Point(188, 20);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(46, 23);
+            this.btnPlus.TabIndex = 9;
+            this.btnPlus.Text = "+";
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(120, 25);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(59, 12);
+            this.label42.TabIndex = 8;
+            this.label42.Text = "°/mm /°";
+            // 
+            // moveValue
+            // 
+            this.moveValue.Location = new System.Drawing.Point(57, 22);
+            this.moveValue.Name = "moveValue";
+            this.moveValue.Size = new System.Drawing.Size(57, 21);
+            this.moveValue.TabIndex = 7;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(11, 25);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(41, 12);
+            this.label41.TabIndex = 6;
+            this.label41.Text = "移动：";
+            // 
+            // radioButton8
+            // 
+            this.radioButton8.AutoSize = true;
+            this.radioButton8.Location = new System.Drawing.Point(15, 140);
+            this.radioButton8.Name = "radioButton8";
+            this.radioButton8.Size = new System.Drawing.Size(59, 16);
+            this.radioButton8.TabIndex = 5;
+            this.radioButton8.Text = "Axis-6";
+            this.radioButton8.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
+            this.radioButton3.Location = new System.Drawing.Point(15, 30);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(59, 16);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Axis-1";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(15, 118);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(59, 16);
+            this.radioButton7.TabIndex = 4;
+            this.radioButton7.Text = "Axis-5";
+            this.radioButton7.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(15, 52);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(59, 16);
+            this.radioButton4.TabIndex = 1;
+            this.radioButton4.Text = "Axis-2";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(15, 96);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(59, 16);
+            this.radioButton6.TabIndex = 3;
+            this.radioButton6.Text = "Axis-4";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(15, 74);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(59, 16);
+            this.radioButton5.TabIndex = 2;
+            this.radioButton5.Text = "Axis-3";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
             // runStatus
             // 
             this.runStatus.Location = new System.Drawing.Point(652, 474);
@@ -1418,142 +1571,118 @@
             this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // tabPage8
+            // radioButton10
             // 
-            this.tabPage8.Controls.Add(this.groupBox5);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(917, 434);
-            this.tabPage8.TabIndex = 7;
-            this.tabPage8.Text = "Jog运动";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.radioButton10.AutoSize = true;
+            this.radioButton10.Location = new System.Drawing.Point(15, 184);
+            this.radioButton10.Name = "radioButton10";
+            this.radioButton10.Size = new System.Drawing.Size(83, 16);
+            this.radioButton10.TabIndex = 0;
+            this.radioButton10.Text = "Y-方向直线";
+            this.radioButton10.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioButton12
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(15, 30);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(59, 16);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Axis-1";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton12.AutoSize = true;
+            this.radioButton12.Location = new System.Drawing.Point(15, 228);
+            this.radioButton12.Name = "radioButton12";
+            this.radioButton12.Size = new System.Drawing.Size(83, 16);
+            this.radioButton12.TabIndex = 1;
+            this.radioButton12.Text = "X-方向旋转";
+            this.radioButton12.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // radioButton14
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(15, 52);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(59, 16);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.Text = "Axis-2";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton14.AutoSize = true;
+            this.radioButton14.Location = new System.Drawing.Point(15, 272);
+            this.radioButton14.Name = "radioButton14";
+            this.radioButton14.Size = new System.Drawing.Size(83, 16);
+            this.radioButton14.TabIndex = 2;
+            this.radioButton14.Text = "Z-方向旋转";
+            this.radioButton14.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // radioButton9
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(15, 74);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(59, 16);
-            this.radioButton5.TabIndex = 2;
-            this.radioButton5.Text = "Axis-3";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton9.AutoSize = true;
+            this.radioButton9.Location = new System.Drawing.Point(15, 162);
+            this.radioButton9.Name = "radioButton9";
+            this.radioButton9.Size = new System.Drawing.Size(83, 16);
+            this.radioButton9.TabIndex = 0;
+            this.radioButton9.Text = "X-方向直线";
+            this.radioButton9.UseVisualStyleBackColor = true;
             // 
-            // radioButton6
+            // radioButton11
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(15, 96);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(59, 16);
-            this.radioButton6.TabIndex = 3;
-            this.radioButton6.Text = "Axis-4";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton11.AutoSize = true;
+            this.radioButton11.Location = new System.Drawing.Point(15, 206);
+            this.radioButton11.Name = "radioButton11";
+            this.radioButton11.Size = new System.Drawing.Size(83, 16);
+            this.radioButton11.TabIndex = 1;
+            this.radioButton11.Text = "Z-方向直线";
+            this.radioButton11.UseVisualStyleBackColor = true;
             // 
-            // radioButton7
+            // radioButton13
             // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(15, 118);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(59, 16);
-            this.radioButton7.TabIndex = 4;
-            this.radioButton7.Text = "Axis-5";
-            this.radioButton7.UseVisualStyleBackColor = true;
+            this.radioButton13.AutoSize = true;
+            this.radioButton13.Location = new System.Drawing.Point(15, 250);
+            this.radioButton13.Name = "radioButton13";
+            this.radioButton13.Size = new System.Drawing.Size(83, 16);
+            this.radioButton13.TabIndex = 2;
+            this.radioButton13.Text = "Y-方向旋转";
+            this.radioButton13.UseVisualStyleBackColor = true;
             // 
-            // radioButton8
+            // label43
             // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(15, 140);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(59, 16);
-            this.radioButton8.TabIndex = 5;
-            this.radioButton8.Text = "Axis-6";
-            this.radioButton8.UseVisualStyleBackColor = true;
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(16, 26);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(101, 12);
+            this.label43.TabIndex = 11;
+            this.label43.Text = "1-机器人自动模式";
             // 
-            // groupBox5
+            // label44
             // 
-            this.groupBox5.Controls.Add(this.btnMinus);
-            this.groupBox5.Controls.Add(this.btnPlus);
-            this.groupBox5.Controls.Add(this.label42);
-            this.groupBox5.Controls.Add(this.moveJogAngel);
-            this.groupBox5.Controls.Add(this.label41);
-            this.groupBox5.Controls.Add(this.radioButton8);
-            this.groupBox5.Controls.Add(this.radioButton3);
-            this.groupBox5.Controls.Add(this.radioButton7);
-            this.groupBox5.Controls.Add(this.radioButton4);
-            this.groupBox5.Controls.Add(this.radioButton6);
-            this.groupBox5.Controls.Add(this.radioButton5);
-            this.groupBox5.Location = new System.Drawing.Point(17, 19);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(308, 282);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Jog-轴运动";
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(17, 45);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(65, 12);
+            this.label44.TabIndex = 12;
+            this.label44.Text = "2-循环开启";
             // 
-            // label41
+            // label45
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(102, 32);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(65, 12);
-            this.label41.TabIndex = 6;
-            this.label41.Text = "移动角度：";
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(17, 67);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(107, 12);
+            this.label45.TabIndex = 13;
+            this.label45.Text = "3-中断程序运行Jog";
             // 
-            // moveJogAngel
+            // groupBox8
             // 
-            this.moveJogAngel.Location = new System.Drawing.Point(164, 29);
-            this.moveJogAngel.Name = "moveJogAngel";
-            this.moveJogAngel.Size = new System.Drawing.Size(57, 21);
-            this.moveJogAngel.TabIndex = 7;
+            this.groupBox8.Controls.Add(this.label45);
+            this.groupBox8.Controls.Add(this.label43);
+            this.groupBox8.Controls.Add(this.label44);
+            this.groupBox8.Location = new System.Drawing.Point(139, 126);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(200, 100);
+            this.groupBox8.TabIndex = 14;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "运行条件";
             // 
-            // label42
+            // groupBox9
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(222, 32);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(17, 12);
-            this.label42.TabIndex = 8;
-            this.label42.Text = "°";
-            // 
-            // btnPlus
-            // 
-            this.btnPlus.Location = new System.Drawing.Point(164, 71);
-            this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(57, 23);
-            this.btnPlus.TabIndex = 9;
-            this.btnPlus.Text = "+";
-            this.btnPlus.UseVisualStyleBackColor = true;
-            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
-            // 
-            // btnMinus
-            // 
-            this.btnMinus.Location = new System.Drawing.Point(164, 100);
-            this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(57, 23);
-            this.btnMinus.TabIndex = 10;
-            this.btnMinus.Text = "-";
-            this.btnMinus.UseVisualStyleBackColor = true;
-            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
+            this.groupBox9.Controls.Add(this.label41);
+            this.groupBox9.Controls.Add(this.moveValue);
+            this.groupBox9.Controls.Add(this.label42);
+            this.groupBox9.Controls.Add(this.btnPlus);
+            this.groupBox9.Controls.Add(this.btnMinus);
+            this.groupBox9.Location = new System.Drawing.Point(139, 34);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(296, 53);
+            this.groupBox9.TabIndex = 15;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "控制";
             // 
             // Form1
             // 
@@ -1590,11 +1719,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.tabPage8.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1741,8 +1874,19 @@
         private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox moveJogAngel;
+        private System.Windows.Forms.TextBox moveValue;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.RadioButton radioButton9;
+        private System.Windows.Forms.RadioButton radioButton11;
+        private System.Windows.Forms.RadioButton radioButton13;
+        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton radioButton12;
+        private System.Windows.Forms.RadioButton radioButton14;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
     }
 }
 
