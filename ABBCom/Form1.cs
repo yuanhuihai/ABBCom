@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using ABB.Robotics.Controllers;
 using ABB.Robotics.Controllers.Discovery;
 using ABB.Robotics.Controllers.EventLogDomain;
@@ -33,17 +34,38 @@ namespace ABBCom
 
         RapidData rd;
 
-
-
-
-
         public string localFilePath; //rapidcode代码内容保存地址
+
+
+
+        //20240125 电机扭矩采集
+       public Timer timerGetTorque;
+       public string axisTorqueSelect; //电机选择
+        
+        
+
+
+
+
 
         public Form1()
         {
             InitializeComponent();
 
-         
+
+            //20240125 扭矩信息采集
+            string aa = getInter.Text.ToString(); //上位机从机器人处获取扭矩周期
+
+            if (Convert.ToInt16(aa) == 0)
+            {
+                aa = 200.ToString();
+            }
+               
+            
+            timerGetTorque = new Timer();
+            timerGetTorque.Interval =Convert.ToInt16(aa);
+            timerGetTorque.Tick += Timer_Tick;
+       
 
 
 
@@ -450,7 +472,6 @@ namespace ABBCom
                     number.Rot.Q3 = Convert.ToSingle(showQthree.Text);
                     number.Rot.Q4 = Convert.ToSingle(showQfour.Text);
                     rd.Value = number;
-
 
                 }
             }
@@ -993,6 +1014,68 @@ namespace ABBCom
                 RmoveJoint.Value = movejoint;
 
                 
+            }
+        }
+
+
+
+        //20240125 上位机获取扭矩信息
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            
+            RapidData nnum = controller.Rapid.GetRapidData("torqueRead", "Module2", axisTorqueSelect);
+            string f= nnum.Value.ToString();
+
+            torqueOne.Series[0].Points.Add(Convert.ToDouble(f));
+          
+            if (torqueOne.Series[0].Points.Count > 100)
+            {
+                torqueOne.Series[0].Points.RemoveAt(0);
+             
+            }
+        }
+
+
+
+        //20240125 上位机获取扭矩信息
+        private void axisTorList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (axisTorList.SelectedIndex == 0)
+            {
+                axisTorqueSelect = "tOne";
+
+                timerGetTorque.Start();
+            }
+            if (axisTorList.SelectedIndex == 1)
+            {
+                axisTorqueSelect = "tTwo";
+                timerGetTorque.Stop();
+                timerGetTorque.Start();
+            }
+            if (axisTorList.SelectedIndex == 2)
+            {
+                axisTorqueSelect = "tThree";
+                timerGetTorque.Stop();
+                timerGetTorque.Start();
+            }
+            if (axisTorList.SelectedIndex == 3)
+            {
+                axisTorqueSelect = "tFour";
+                timerGetTorque.Stop();
+                timerGetTorque.Start();
+            }
+            if (axisTorList.SelectedIndex == 4)
+            {
+                axisTorqueSelect = "tFive";
+                timerGetTorque.Stop();
+                timerGetTorque.Start();
+            }
+            if (axisTorList.SelectedIndex == 5)
+            {
+                axisTorqueSelect = "tSix";
+                timerGetTorque.Stop();
+                timerGetTorque.Start();
             }
         }
     }

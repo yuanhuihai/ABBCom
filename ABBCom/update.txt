@@ -1,4 +1,5 @@
-﻿20230609 使用tabcontrol 工具
+﻿对应robotStudio程序 jogMove
+20230609 使用tabcontrol 工具
 
 20230611
 1-获取module内容，并显示
