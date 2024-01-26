@@ -1023,7 +1023,7 @@ namespace ABBCom
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            
+            torqueOne.Legends.Clear(); //清除图表中的series1，使图表看起来大一点
             RapidData nnum = controller.Rapid.GetRapidData("torqueRead", "Module2", axisTorqueSelect);
             string f= nnum.Value.ToString();
 
